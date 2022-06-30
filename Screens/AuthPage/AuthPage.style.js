@@ -20,6 +20,13 @@ export default StyleSheet.create({
     btn_text:{
         color: colors.primary,
         fontWeight: 600,
-        
+    },
+    form:{
+        height: '70vh',
+        backgroundColor: '#fff',
+        position: 'absolute',
+        // top: '70vh'
+        width: '100%',
+        borderRadius: '10px'
     }
 })

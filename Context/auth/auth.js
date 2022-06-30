@@ -3,7 +3,7 @@ const auth = (token = '') => {
         case '':
             return false;
         default:
-        return action.theme;
+        return token;
     }
 }
 export default auth;
