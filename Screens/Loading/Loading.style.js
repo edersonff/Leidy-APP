@@ -10,7 +10,9 @@ export default StyleSheet.create({
     container_image: {
         resizeMode:'contain',
         height: 300,
-        width: 300
+        width: '70%',
+        alignItems: 'center',
+        justifyContent: 'center',
     },
     image:{
         resizeMode:'contain',
