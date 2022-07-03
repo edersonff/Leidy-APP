@@ -1,26 +1,66 @@
-import React from 'react';
-import { Text, View, Pressable, Button } from 'react-native';
-import styles from './AuthPage.style'
-import { logo } from '../../styles/base'
+import React, { useEffect, useState } from 'react';
+import { Text, View, Pressable, Animated } from 'react-native';
+import { packages } from '../../styles/base';
+import Btn from '../../Components/Button';
+import Input from '../../Components/Input';
+import styles from './AuthPage.style';
+import { passwordStrength } from 'check-password-strength';
+import Animation from '../../Helpers/Animation'
 
 export default function Loading(props) {
+    const { innerHeight } = window;
+    const [ passSecurity, setPassSecurity ] = useState(0);
+    const [ bottomAnim, setBottomAnim ] = useState(false);
+    const bottom = Animation(-innerHeight*0.7, 0, 250);
+    bottom.setValue(0);
+    useEffect(()=>{
+        bottom.setValue(bottomAnim ? 0 : -innerHeight*0.7);
+    },[bottomAnim])
+
+
+    function PassReturn({id}){
+        const width = Animation(0, 65, 250);
+
+        useEffect(()=>{
+            width.setValue(passSecurity >= id ? 65 : 0);
+        },[passSecurity])
+
+        return(
+            <View style={[styles.verify_pass, styles.pass_empty]}>
+                <Animated.View 
+                    style={[
+                        styles.verify_pass, styles.pass_fill, 
+                        { width: width.anim }
+                    ]} 
+                />
+            </View>
+        )
+    }
+
     return (
         <View style={styles.container}>
+            <Pressable onPress={()=>{if(bottomAnim)setBottomAnim(false)}} style={styles.logo_container}>
+                <Text style={styles.logo_text}>{packages.name}</Text>
+            </Pressable>
             <View style={styles.btns_container}>
-                <Pressable style={styles.btn}>
-                    <Text style={styles.btn_text}>LOGAR</Text>
-                </Pressable>
-            <Button style={styles.btn} title='Go to About'
-                onPress={() => props.navigation.navigate('Loading')}
-            />
+                <Btn text="Sou ... " onPress={()=>{if(!bottomAnim)setBottomAnim(true)}}/>
+                <Btn text={"Sou ... "} onPress={()=>{if(!bottomAnim)setBottomAnim(true)}}/>
             </View>
-            <View style={styles.form}>
+            <Animated.View style={[styles.form, {bottom: bottom.anim}]}>
                 <View style={styles.form_control}>
-                <label htmlFor="email">Email</label>
-                <input name="email" type="text" />
-
+                    <Input secure={false} placeholder='Digite seu email' name={'Email'} />
+                    <Input secure={true} placeholder='Digite sua senha' name={'Senha'} onChange={(e)=>{setPassSecurity(passwordStrength(e.target.value).id)}} />
+                    <Btn onPress={()=>{ props.navigation.navigate('SystemMessage') }} text='Fazer cadastro' color='#9949CA' fill={true}/> 
+                    <View>
+                        <Text style={styles.title_verify_pass}>Segurança da senha</Text>
+                        <View style={styles.container_verify_pass}>
+                            <PassReturn id={1} />
+                            <PassReturn id={2} />
+                            <PassReturn id={3} />
+                        </View>
+                    </View>
                 </View>
-            </View>
+            </Animated.View>
         </View>
     );
 }

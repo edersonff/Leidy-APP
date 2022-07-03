@@ -5,7 +5,6 @@ export const colors = {
     second: '#B2EBFF',
     third: '#CC71CE'
 }
-export const fonts = {
-    fontFamily: 'Inter'
-}
 export const logo = require('../img/Logo-teste.png');
+
+export const packages = require('../package.json');
