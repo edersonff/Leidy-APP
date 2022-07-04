@@ -5,7 +5,8 @@ export default StyleSheet.create({
         flex: 1,
         backgroundColor: colors.primary,
         alignItems: 'center',
-        justifyContent: 'center',
+        justifyContent: 'center',   
+        position: 'relative',
     },
     btns_container: {
         height: '40%',
@@ -14,7 +15,7 @@ export default StyleSheet.create({
     },
     form:{
         height: '70vh',
-        backgroundColor: '#fff',
+        backgroundColor: colors.bg,
         position: 'fixed',
         width: '100%',
         borderTopLeftRadius: '15px',
@@ -23,7 +24,7 @@ export default StyleSheet.create({
         justifyContent: 'center'
     },
     form_control:{
-        width: '70%',
+        width: '60%',
         height: '80%',
         justifyContent: 'space-between'
     },
@@ -43,7 +44,7 @@ export default StyleSheet.create({
         zIndex: 2
     },
     logo_text:{
-        color: '#fff',
+        color: colors.bg,
         fontSize: '2em'
     },
     verify_pass:{

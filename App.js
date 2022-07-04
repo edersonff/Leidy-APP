@@ -13,9 +13,10 @@ export default function App() {
   return (
     <NavigationContainer style={style.app_container}>
       <Stack.Navigator
-        initialRouteName='SystemMessage'
+        initialRouteName='Loading'
         screenOptions={{
           headerShown: false,
+          animationEnabled: true
         }}>
         <Stack.Screen name="Loading" component={Loading} options={{ gestureDirection: 'horizontal' }} />
 

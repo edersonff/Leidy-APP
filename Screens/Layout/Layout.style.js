@@ -14,7 +14,7 @@ export default StyleSheet.create({
     },
     form:{
         height: '70vh',
-        backgroundColor: '#fff',
+        backgroundColor: colors.bg,
         position: 'absolute',
         bottom: '-70vh',
         width: '100%',

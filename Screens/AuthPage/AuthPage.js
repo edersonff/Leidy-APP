@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
+import useState from 'react-usestateref'
 import { Text, View, Pressable, Animated } from 'react-native';
 import { packages } from '../../styles/base';
 import Btn from '../../Components/Button';
@@ -7,9 +8,10 @@ import styles from './AuthPage.style';
 import { passwordStrength } from 'check-password-strength';
 import Animation from '../../Helpers/Animation'
 
+const width = [];
 export default function Loading(props) {
     const { innerHeight } = window;
-    const [ passSecurity, setPassSecurity ] = useState(0);
+    const [ passSecurity, setPassSecurity, passSecurityRef ] = useState(0);
     const [ bottomAnim, setBottomAnim ] = useState(false);
     const bottom = Animation(-innerHeight*0.7, 0, 250);
     bottom.setValue(0);
@@ -17,12 +19,14 @@ export default function Loading(props) {
         bottom.setValue(bottomAnim ? 0 : -innerHeight*0.7);
     },[bottomAnim])
 
-
     function PassReturn({id}){
-        const width = Animation(0, 65, 250);
+        width[id-1] = width[id-1] ? width[id-1] : Animation(0, 65, 250);
 
         useEffect(()=>{
-            width.setValue(passSecurity >= id ? 65 : 0);
+            console.log(250*(passSecurity-passSecurityRef.current-id));
+            setTimeout(()=>{
+                width[id-1].setValue(passSecurity >= id ? 65 : 0);
+            }, 250*(passSecurity-passSecurityRef.current-id))
         },[passSecurity])
 
         return(
@@ -30,7 +34,7 @@ export default function Loading(props) {
                 <Animated.View 
                     style={[
                         styles.verify_pass, styles.pass_fill, 
-                        { width: width.anim }
+                        { width: width[id-1].anim }
                     ]} 
                 />
             </View>

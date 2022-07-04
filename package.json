@@ -28,6 +28,7 @@
     "react-native-web": "0.17.7",
     "react-navigation": "^4.4.4",
     "react-navigation-stack": "^2.10.4",
+    "react-usestateref": "^1.0.8",
     "rn-css": "^1.6.17",
     "styled-components": "^5.3.5"
   },
