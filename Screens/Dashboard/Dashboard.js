@@ -9,11 +9,12 @@ import Menu from '../../img/Menu01.png';
 import Perfil from '../../img/Perfil01.png';
 import Filter from '../../Components/Filter';
 import Navbar from '../../Components/Navbar';
+import { ScrollView } from 'react-native';
 export default function Loading({ navigation }) {
     const [ menuSelected, setMenuSelected] = useState(0);
     return (
         <>
-            <View style={styles.container}>
+            <ScrollView style={styles.container}>
                 <Text style={styles.address}>R. address, number</Text>
                 <HorizontalScroll marginTop={13}>
                     <MenuOption text='Limpeza' selected={true} color='green' first={true} />
@@ -41,7 +42,7 @@ export default function Loading({ navigation }) {
                     <PerfilOption text='Jonathan F.' rate={3.5} src={Perfil} />
                     <PerfilOption text='Jonathan F.' rate={4.5} src={Perfil} />
                 </HorizontalScroll>
-            </View>
+            </ScrollView>
             <Navbar navigation={navigation} />
         </>
     );

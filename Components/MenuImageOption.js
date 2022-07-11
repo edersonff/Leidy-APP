@@ -6,18 +6,6 @@ export default function MenuImageOption({text, src, color = '#000', first}){
         margin: 0 15px;
         margin-left: ${first ? '0' : 'auto'};
     `
-    const MenuImage = styled.View`
-        textAlign: left;
-    `
-    const Image = styled.Image`
-        resize-mode: contain;
-        width: 90px;
-        height: 90px;
-        border-radius: 9px;
-    `
-    const ImageView = styled.View`
-        textAlign: left;
-    `
     const Text = styled.Text`
         color: ${ color };
         font-size: 12px;
@@ -35,3 +23,16 @@ export default function MenuImageOption({text, src, color = '#000', first}){
         </Container>
     )
 }
+
+const MenuImage = styled.View`
+textAlign: left;
+`
+const Image = styled.Image`
+resize-mode: contain;
+width: 90px;
+height: 90px;
+border-radius: 9px;
+`
+const ImageView = styled.View`
+textAlign: left;
+`
