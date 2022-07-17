@@ -15,7 +15,7 @@ export default function Loading(props) {
             <View style={styles.container_image}>
                 <Image style={styles.image} source={logo} />
             </View>
-            <Text>NAME</Text>
+            <Text>{process.env.APP_NAME}</Text>
         </View>
     );
 }

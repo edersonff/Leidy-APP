@@ -13,7 +13,7 @@ import {createStore} from 'redux';
 import reducers from './Context/index'
 import { Provider } from 'react-redux';
 
-const store = createStore(
+export const store = createStore(
   reducers,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()  
 );
@@ -25,7 +25,7 @@ export default function App() {
     <Provider store={store}>
       <NavigationContainer style={style.app_container}>
         <Stack.Navigator
-          initialRouteName='Dashboard'
+          initialRouteName='AuthPage'
           screenOptions={{
             headerShown: false,
             animationEnabled: true,
@@ -47,7 +47,7 @@ export default function App() {
 
         </Stack.Navigator>
         <StatusBar/>
-        <ActivityIndicator size={70} style={style.Loading}/>
+        {/* <ActivityIndicator size={70} style={style.Loading}/> */}
       </NavigationContainer>
     </Provider>
   );

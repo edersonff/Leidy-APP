@@ -1,9 +1,9 @@
 const auth = (token = '') => {
     switch(token){
         case '':
-            return false;
+            return {value: false};
         default:
-        return token;
+        return {value: token};
     }
 }
 export default auth;
