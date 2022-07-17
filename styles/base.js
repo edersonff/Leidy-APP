@@ -13,7 +13,7 @@ export const logo = require('../img/Logo-teste.png');
 export const packages = require('../package.json');
 
 export const token = () => { return store.getState().auth.value }
-export const storeRedux = () => { return store }
+export const dispatch = () => { return store.dispatch() }
 
 export const api = axios.create({
   baseURL: packages.api

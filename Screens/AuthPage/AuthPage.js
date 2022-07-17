@@ -1,19 +1,21 @@
 import React, { useEffect } from "react";
 import useState from "react-usestateref";
 import { Text, View, Pressable, Animated } from "react-native";
-import { storeRedux, packages, api } from "../../styles/base";
+import { packages, api, dispatch } from "../../styles/base";
 import Btn from "../../Components/Button";
 import Input from "../../Components/Input";
 import styles from "./AuthPage.style";
 import { passwordStrength } from "check-password-strength";
 import Animation from "../../Helpers/Animation";
 import axios from "axios";
+import auth from "../../Context/auth";
 
 const width = [];
 export default function AuthPage(props) {
   const { innerHeight } = window;
   const [passSecurity, setPassSecurity, passSecurityRef] = useState(0);
   const [bottomAnim, setBottomAnim] = useState(false);
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -47,14 +49,17 @@ export default function AuthPage(props) {
   }
 
   async function submitRegister() {
-    await api
-      .post("/register", {
-        email, password
+    return await api
+      .post("user/register", {
+        name,
+        email,
+        password,
         // headers: { Authorization: `Bearer ${data.token}` },
       })
-      .then((data) => {
-        storeRedux().dispatch({value: data.token})
-      }).catch(function (error) {
+      .then((res) => {
+        dispatch(auth({ value: res.data.token }));
+      })
+      .catch(function (error) {
         console.log(error);
       });
   }
@@ -85,6 +90,14 @@ export default function AuthPage(props) {
       </View>
       <Animated.View style={[styles.form, { bottom: bottom.anim }]}>
         <View style={styles.form_control}>
+          <Input
+            secure={false}
+            placeholder="Digite seu nome"
+            onChange={(e) => {
+              setName(e.target.value);
+            }}
+            name={"Nome"}
+          />
           <Input
             secure={false}
             placeholder="Digite seu email"
