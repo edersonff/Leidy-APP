@@ -7,6 +7,7 @@ export default StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',   
         position: 'relative',
+        overflow: 'hidden'
     },
     btns_container: {
         height: '40%',
@@ -16,7 +17,7 @@ export default StyleSheet.create({
     form:{
         height: '70vh',
         backgroundColor: colors.bg,
-        position: 'fixed',
+        position: 'absolute',
         width: '100%',
         borderTopLeftRadius: '15px',
         borderTopRightRadius: '15px',

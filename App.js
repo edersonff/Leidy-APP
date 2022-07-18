@@ -25,7 +25,7 @@ export default function App() {
     <Provider store={store}>
       <NavigationContainer style={style.app_container}>
         <Stack.Navigator
-          initialRouteName='AuthPage'
+          initialRouteName='Perfil'
           screenOptions={{
             headerShown: false,
             animationEnabled: true,

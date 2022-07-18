@@ -5,6 +5,7 @@ export default StyleSheet.create({
     flex: 1,
     fontFamily: 'Inter", sans-serif',
     display: "none",
+    height: '100%'
   },
   Loading: {
     position: "absolute",
