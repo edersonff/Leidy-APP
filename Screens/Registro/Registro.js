@@ -1,30 +1,33 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import useState from "react-usestateref";
 import { Text, View, Pressable, Animated } from "react-native";
-import { packages, api, dispatch } from "../../styles/base";
+import { packages } from "../../styles/base";
 import Btn from "../../Components/Button";
-import Input from "../../Components/Input";
-import styles from "./AuthPage.style";
+import styles from "./Registro.style";
 import { passwordStrength } from "check-password-strength";
 import Animation from "../../Helpers/Animation";
-import axios from "axios";
-import auth from "../../Context/auth";
+import { store } from "../../App";
+import Context, { api } from "../../Context";
+import { TextInput } from 'react-native-paper';
+import Ionicons from '@expo/vector-icons/Ionicons';
 
 const width = [];
-export default function AuthPage(props) {
+export default function AuthPage() {
+  const context = Context(store);
   const { innerHeight } = window;
   const [passSecurity, setPassSecurity, passSecurityRef] = useState(0);
-  const [bottomAnim, setBottomAnim] = useState(false);
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [bottomAnimRegister, setbottomAnimRegister] = useState(false);
+  const [isPasswordSecure, setIsPasswordSecure] = useState(true);
+  const name = useRef('');
+  const email = useRef('');
+  const password = useRef('');
 
-  const bottom = Animation(-innerHeight * 0.7, 0, 250);
-  bottom.setValue(0);
+  const bottomReg = Animation(-innerHeight * 0.7, 0, 250);
+  bottomReg.setValue(0);
 
   useEffect(() => {
-    bottom.setValue(bottomAnim ? 0 : -innerHeight * 0.7);
-  }, [bottomAnim]);
+    bottomReg.setValue(bottomAnimRegister ? 0 : -innerHeight * 0.7);
+  }, [bottomAnimRegister]);
 
   function PassReturn({ id }) {
     width[id - 1] = width[id - 1] ? width[id - 1] : Animation(0, 65, 250);
@@ -34,6 +37,7 @@ export default function AuthPage(props) {
         width[id - 1].setValue(passSecurity >= id ? 65 : 0);
       }, 250 * (passSecurity - passSecurityRef.current - id));
     }, [passSecurity]);
+
 
     return (
       <View style={[styles.verify_pass, styles.pass_empty]}>
@@ -49,26 +53,24 @@ export default function AuthPage(props) {
   }
 
   async function submitRegister() {
-    return await api
-      .post("user/register", {
-        name,
-        email,
-        password,
-        // headers: { Authorization: `Bearer ${data.token}` },
+    await api
+      .post("user/register/client", {
+        name: name.current.value,
+        email: email.current.value,
+        password: password.current.value
       })
       .then((res) => {
-        dispatch(auth({ value: res.data.token }));
+        context.setToken(res.data.token);
       })
-      .catch(function (error) {
-        console.log(error);
-      });
+      
+    context.apiAuth().delete("auth/user/");
   }
 
   return (
     <View style={styles.container}>
       <Pressable
         onPress={() => {
-          if (bottomAnim) setBottomAnim(false);
+          if (bottomAnimRegister) setbottomAnimRegister(false);
         }}
         style={styles.logo_container}
       >
@@ -78,41 +80,47 @@ export default function AuthPage(props) {
         <Btn
           text="Sou ... "
           onPress={() => {
-            if (!bottomAnim) setBottomAnim(true);
+            if (!bottomAnimRegister) setbottomAnimRegister(true);
           }}
         />
         <Btn
           text={"Sou ... "}
           onPress={() => {
-            if (!bottomAnim) setBottomAnim(true);
+            if (!bottomAnimRegister) setbottomAnimRegister(true);
           }}
         />
       </View>
-      <Animated.View style={[styles.form, { bottom: bottom.anim }]}>
+      <Animated.View style={[styles.form, { bottom: bottomReg.anim }]}>
         <View style={styles.form_control}>
-          <Input
-            secure={false}
-            placeholder="Digite seu nome"
-            onChange={(e) => {
-              setName(e.target.value);
-            }}
+          <TextInput
+            mode="outlined"
+            label="Digite seu nome"
+            useRef={name}
             name={"Nome"}
           />
-          <Input
-            secure={false}
-            placeholder="Digite seu email"
-            onChange={(e) => {
-              setEmail(e.target.value);
-            }}
+          <TextInput
+            mode="outlined"
+            label="Digite seu email"
+            useRef={email}
             name={"Email"}
           />
-          <Input
-            secure={true}
-            placeholder="Digite sua senha"
+          <TextInput
+            mode="outlined"
+            label="Digite sua senha"
             name={"Senha"}
+            useRef={password}
+            password={true}
+            secureTextEntry={isPasswordSecure}
+            right={
+              <TextInput.Icon
+                style={{marginRight: 30}}
+                name={() => <Ionicons name={isPasswordSecure ? "eye-off-outline" : "eye-outline"} size={25} color={"rgb(50,50,50)"} />}
+                onPress={() => { isPasswordSecure ? setIsPasswordSecure(false) : setIsPasswordSecure(true) }}
+              />
+            }
             onChange={(e) => {
               setPassSecurity(passwordStrength(e.target.value).id);
-              setPassword(e.target.value);
+              console.log(e.target.value);
             }}
           />
           <Btn

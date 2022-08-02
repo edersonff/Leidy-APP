@@ -10,7 +10,7 @@ export default function MenuOption({text, selected, color = '#000', first}){
     )
 }
 const Container = styled.View`
-fontSize: 1.2em;
+fontSize: 24;
 margin: 0 15px;
 `
 const MenuNav = styled.View`
@@ -24,5 +24,5 @@ border-bottom-style : solid;
 const TextNav = styled.Text`
 font-size: 12px;
 text-align: center;
-font-weight: 700;
+font-weight: normal;
 `

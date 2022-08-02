@@ -12,8 +12,8 @@ export default function Btn({text, fill, onPress, style, color}){
             border: '3px solid '+color,
         },
         btn_text:{
-            fontWeight: 600,
-            fontSize: '1.2em',
+            fontWeight: 'normal',
+            fontSize: 24,
             letterSpacing: 1
         },
         fill:{

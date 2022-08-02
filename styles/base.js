@@ -1,5 +1,3 @@
-import { StyleSheet } from "react-native";
-import { store } from "../App";
 import axios from 'axios';
 
 export const colors = {
@@ -9,13 +7,28 @@ export const colors = {
     bg: '#fff',
 }
 export const logo = require('../img/Logo-teste.png');
-
 export const packages = require('../package.json');
 
-export const token = () => { return store.getState().auth.value }
-export const dispatch = () => { return store.dispatch() }
+// export const token = () => { return store.getState().auth.value }
+
+// const counter = useSelector(state => state.auth);
+// const isLogged = useSelector(state => state.loading);
+// export const dispatch = useDispatch();
+
+// store.dispatch({
+//   type: 'SET_TOKEN',
+//   token: 'Use Redux'
+// })
+
+// console.log(auth, token, dispatch);
 
 export const api = axios.create({
   baseURL: packages.api
 });
+
+export const headToken = {
+  headers: {
+    'Authorization': 'Bearer ' + 123
+  }
+}
 

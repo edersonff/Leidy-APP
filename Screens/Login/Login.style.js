@@ -15,7 +15,7 @@ export default StyleSheet.create({
         justifyContent: 'space-evenly'
     },
     form:{
-        height: '70vh',
+        height: '70%',
         backgroundColor: colors.bg,
         position: 'absolute',
         width: '100%',
@@ -25,28 +25,29 @@ export default StyleSheet.create({
         justifyContent: 'center'
     },
     form_control:{
-        width: '60%',
+        width: '75%',
         height: '80%',
+        marginHorizontal: 'auto',
         justifyContent: 'space-between'
     },
     form_title:{
-        fontSize: '1.6em',
+        fontSize: 30,
         textAlign: "center",
-        fontWeight: 600,
+        fontWeight: 'normal',
         textTransform: 'uppercase'
     },
     logo_container:{
         position: "absolute",
         top: '0',
         width: '100%',
-        height: '30vh',
+        height: '30%',
         justifyContent: 'center',
         alignItems: 'center',
         zIndex: 2
     },
     logo_text:{
         color: colors.bg,
-        fontSize: '2em'
+        fontSize: 30
     },
     verify_pass:{
         width: '65px',
@@ -69,7 +70,12 @@ export default StyleSheet.create({
         justifyContent: 'space-between'
     },
     title_verify_pass:{
-        fontWeight: 500,
-        marginBottom: '10px'
+        fontWeight: 'normal',
+        marginBottom: '30px',
+        marginTop: '30px'
+    },
+    input:{
+        marginBottom: '20px',
+        borderBottomColor: '#fff'
     }
 })

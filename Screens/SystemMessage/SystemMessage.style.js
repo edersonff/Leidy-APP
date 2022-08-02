@@ -14,17 +14,17 @@ export default StyleSheet.create({
         width: '100%',
         backgroundColor: colors.bg,
         borderRadius: '40px',
-        fontSize: '1.4em',
+        fontSize: 30,
         padding: '20px'
     },
     title:{
-        fontSize: '1.6em',
-        fontWeight: 600,
+        fontSize: 30,
+        fontWeight: 'normal',
         textAlign: 'center',
     },
     paragraf:{
-        fontSize: '1.1em',
-        fontWeight: 100
+        fontSize: 25,
+        fontWeight: 'normal'
     },
     goback:{
         backgroundColor: colors.bg,

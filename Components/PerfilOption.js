@@ -17,8 +17,8 @@ export default function PerfilOption({text, rate, src, color = '#000', first}){
     )
 }
 const Container = styled.View`
-    fontSize: 1.2em;
-    margin: 0 15px;
+    fontSize: 24;
+    margin-right: 25px;
 `
 const MenuImage = styled.View`
     textAlign: left;
@@ -40,7 +40,7 @@ const Name = styled.Text`
 const Rate = styled.Text`
     font-size: 12px;
     text-align: center;
-    font-weight: 700;
+    font-weight: normal;
     letter-spacing: 1px;
 `
 const Description = styled.Text`

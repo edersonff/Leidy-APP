@@ -1,5 +1,5 @@
 import styled from 'styled-components/native'
-import { StyleSheet, View } from 'react-native-web'
+import { StyleSheet, View } from 'react-native'
 import { Image, Text } from 'react-native'
 
 export default function MenuImageOption({text, src, color = '#000', first}){
@@ -16,21 +16,21 @@ export default function MenuImageOption({text, src, color = '#000', first}){
 }
 const styles = StyleSheet.create({
     container: {
-        fontSize: '1.2em',
+        fontSize: 24,
     },
     text:{
         fontSize: 12,
         fontAlign: 'center',
-        fontWeight: 700,
+        fontWeight: 'normal',
     },
     image: {
         resizeMode: 'contain',
-        heigth: 90,
+        height: 90,
         width: 90,
         borderRadius: 9,
     },
     imageView:{
-        textAlign: 'left',
+        textAlign: 'center',
     }
 })
 const Container = styled.View`

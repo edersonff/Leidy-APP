@@ -5,8 +5,8 @@ export default function Navbar({first, navigation}){
     return(
         <Container>
             <ItemIcon onPress={() => {navigation.navigate('Dashboard')}} icon="home-outline" text="Inicio" />
-            <ItemIcon icon="search-outline" text="Busca" />
-            <ItemIcon icon="document-outline" text="Pedidos" />
+            <ItemIcon onPress={() => {navigation.navigate('Busca')}} icon="search-outline" text="Busca" />
+            <ItemIcon onPress={() => {navigation.navigate('Pedidos')}} icon="document-outline" text="Pedidos" />
             <ItemIcon onPress={() => {navigation.navigate('Perfil')}} icon="person-circle-outline" text="Perfil" />
         </Container>
     )
@@ -14,7 +14,7 @@ export default function Navbar({first, navigation}){
 const Container = styled.View`
 flex: 1;
 width: 100%;
-fontSize: 1.2em;
+fontSize: 24;
 justify-content: space-between;
 align-items: center;
 padding: 10px 20px;
@@ -42,4 +42,5 @@ const IconContainer = styled.TouchableOpacity`
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content:center;
 `
