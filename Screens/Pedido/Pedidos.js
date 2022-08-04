@@ -1,13 +1,18 @@
 import React from 'react';
 import { View, Image, Text } from 'react-native';
 import styles from './Pedidos.style'
+import PerfilImage from '../../img/Perfil01.png';
+import Navbar from '../../Components/Navbar';
+import Title from '../../Components/Title';
+import TextBox from '../../Components/TextBox';
 import Context from "../../Context";
 import { store } from "../../App";
+import VerticalScroll from '../../Components/VerticalScroll';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import Pedido from '../../Components/Pedido';
 import Layout from '../Layout/Layout';
-export default function Pedido({ navigation }) {
+export default function Pedidos({ navigation }) {
     const context = Context(store);
     const [ orders, setorders ] = useState([]);
     useEffect(async ()=>{

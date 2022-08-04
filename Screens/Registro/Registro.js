@@ -18,9 +18,10 @@ export default function AuthPage() {
   const [passSecurity, setPassSecurity, passSecurityRef] = useState(0);
   const [bottomAnimRegister, setbottomAnimRegister] = useState(false);
   const [isPasswordSecure, setIsPasswordSecure] = useState(true);
-  const name = useRef('');
-  const email = useRef('');
-  const password = useRef('');
+  const name = useRef(null);
+  const email = useRef(null);
+  const password = useRef(null);
+
 
   const bottomReg = Animation(-innerHeight * 0.7, 0, 250);
   bottomReg.setValue(0);
@@ -33,6 +34,7 @@ export default function AuthPage() {
     width[id - 1] = width[id - 1] ? width[id - 1] : Animation(0, 65, 250);
 
     useEffect(() => {
+      console.log(passSecurity);
       setTimeout(() => {
         width[id - 1].setValue(passSecurity >= id ? 65 : 0);
       }, 250 * (passSecurity - passSecurityRef.current - id));
@@ -53,27 +55,31 @@ export default function AuthPage() {
   }
 
   async function submitRegister() {
-    await api
-      .post("user/register/client", {
-        name: name.current.value,
-        email: email.current.value,
-        password: password.current.value
-      })
-      .then((res) => {
-        context.setToken(res.data.token);
-      })
+    console.log({
+      name: name.current,
+      email: email.current,
+      password: password.current
+    });
+    // await api
+    //   .post("user/register/client", {
+    //     name: name.current.value,
+    //     email: email.current.value,
+    //     password: password.current.value
+    //   })
+    //   .then((res) => {
+    //     console.log(res.data.token)
+    //     context.setToken(res.data.token);
+    //   })
       
-    context.apiAuth().delete("auth/user/");
+    // context.apiAuth().delete("auth/user/");
   }
 
   return (
     <View style={styles.container}>
-      <Pressable
+      <Pressable style={styles.logo_container}
         onPress={() => {
           if (bottomAnimRegister) setbottomAnimRegister(false);
-        }}
-        style={styles.logo_container}
-      >
+        }}>
         <Text style={styles.logo_text}>{packages.name}</Text>
       </Pressable>
       <View style={styles.btns_container}>
@@ -81,35 +87,30 @@ export default function AuthPage() {
           text="Sou ... "
           onPress={() => {
             if (!bottomAnimRegister) setbottomAnimRegister(true);
-          }}
-        />
+          }}/>
         <Btn
           text={"Sou ... "}
           onPress={() => {
             if (!bottomAnimRegister) setbottomAnimRegister(true);
-          }}
-        />
+          }}/>
       </View>
       <Animated.View style={[styles.form, { bottom: bottomReg.anim }]}>
         <View style={styles.form_control}>
           <TextInput
             mode="outlined"
             label="Digite seu nome"
-            useRef={name}
-            name={"Nome"}
+            ref={name}
           />
           <TextInput
+            autoComplete="email"
             mode="outlined"
             label="Digite seu email"
-            useRef={email}
-            name={"Email"}
+            ref={email}
           />
           <TextInput
             mode="outlined"
             label="Digite sua senha"
-            name={"Senha"}
-            useRef={password}
-            password={true}
+            ref={password}
             secureTextEntry={isPasswordSecure}
             right={
               <TextInput.Icon
@@ -120,13 +121,10 @@ export default function AuthPage() {
             }
             onChange={(e) => {
               setPassSecurity(passwordStrength(e.target.value).id);
-              console.log(e.target.value);
             }}
           />
           <Btn
-            onPress={() => {
-              submitRegister();
-            }}
+            onPress={() => { submitRegister() }}
             text="Fazer cadastro"
             color="#9949CA"
             fill={true}

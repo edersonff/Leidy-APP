@@ -26,7 +26,7 @@ export default StyleSheet.create({
     },
     form_control:{
         width: '75%',
-        height: '80%',
+        height: '70%',
         justifyContent: 'space-between'
     },
     form_title:{

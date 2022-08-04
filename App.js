@@ -1,11 +1,4 @@
 import { ActivityIndicator, SafeAreaView, View, Platform, StatusBar } from 'react-native';
-
-import Perfil from './Screens/Perfil/Perfil';
-import Loading from './Screens/Loading/Loading';
-import Registro from './Screens/Registro/Registro';
-import Login from './Screens/Login/Login';
-import Dashboard from './Screens/Dashboard/Dashboard';
-import SystemMessage from './Screens/SystemMessage/SystemMessage';
 import style from './App.style';
 import { createStackNavigator  } from "@react-navigation/stack";
 import { NavigationContainer } from '@react-navigation/native';
@@ -15,7 +8,15 @@ import {createStore} from 'redux';
 import reducers from './Context/reducer'
 import { Provider } from 'react-redux';
 import { Provider as PaperProvider } from 'react-native-paper';
-import Pedido from './Screens/Pedidos/Pedidos';
+
+import Perfil from './Screens/Perfil/Perfil';
+import Loading from './Screens/Loading/Loading';
+import Registro from './Screens/Registro/Registro';
+import Login from './Screens/Login/Login';
+import Dashboard from './Screens/Dashboard/Dashboard';
+import SystemMessage from './Screens/SystemMessage/SystemMessage';
+import Pedidos from './Screens/Pedidos/Pedidos';
+import Pedido from './Screens/Pedido/Pedido';
 import Busca from './Screens/Busca/Busca';
 
 export const store = createStore(
@@ -32,7 +33,7 @@ export default function App() {
         <Provider store={store}>
           <NavigationContainer style={style.app_container}>
             <Stack.Navigator
-              initialRouteName='Perfil'
+              initialRouteName='Registro'
               screenOptions={{
                 headerShown: false,
                 animationEnabled: true,
@@ -48,8 +49,15 @@ export default function App() {
               }}>
                   <Stack.Screen name="Dashboard" component={Dashboard} />
                   <Stack.Screen name="Perfil" component={Perfil} />
-                  <Stack.Screen name="Pedidos" component={Pedido} />
+                  <Stack.Screen name="Pedidos" component={Pedidos} />
                   <Stack.Screen name="Busca" component={Busca} />
+              </Stack.Group>
+              
+              <Stack.Group 
+              screenOptions={{
+                animationEnabled: true
+              }}>
+                  <Stack.Screen name="Pedido" component={Pedido} />
               </Stack.Group>
 
             </Stack.Navigator>
