@@ -10,10 +10,10 @@ export const api = axios.create({
 
 export default (store) =>{
   return {
-    setToken: (token) => {
+    set: (action, value = null) => {
       return store.dispatch({
-        type: 'SET_TOKEN',
-        token: token
+        type: action,
+        value
       });
     },
     get: (state, param) => {

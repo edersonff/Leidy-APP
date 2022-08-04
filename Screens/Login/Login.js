@@ -19,8 +19,7 @@ export default function AuthPage(props) {
         password: password.current.value
       })
       .then(async (res) => {
-        context.setToken(res.data.token);
-        console.log(res.data.token);
+        context.set('SET_TOKEN',res.data.token);
       })
       .catch(function (error) {
         console.log(error);

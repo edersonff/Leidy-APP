@@ -9,19 +9,14 @@ import Menu from '../../img/Menu01.png';
 import Perfil from '../../img/Perfil01.png';
 import Filter from '../../Components/Filter';
 import Navbar from '../../Components/Navbar';
-import { ScrollView, Image } from 'react-native';
+import { ScrollView, Image, FlatList } from 'react-native';
 import VerticalScroll from '../../Components/VerticalScroll';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import Promotion from '../../img/Promotion-example.png'
 import Layout from '../Layout/Layout';
-export default function Loading({ navigation }) {
-    const [ menuSelected, setMenuSelected] = useState(0);
-    const [visible, setVisible] = useState(true);
-  
-    const showModal = () => setVisible(true);
-    const hideModal = () => setVisible(false);
+function Limpeza({ navigation }) {
     return (
-        <Layout navigation={navigation}>
+        <>
             <Text style={styles.address}>R. address, number</Text>
             <HorizontalScroll marginTop={13}>
                 <MenuOption text='Limpeza' selected={true} color='green' first={true} />
@@ -63,12 +58,30 @@ export default function Loading({ navigation }) {
                 <PerfilOption text='Jonathan F.' rate={3.5} src={Perfil} />
                 <PerfilOption text='Jonathan F.' rate={4.5} src={Perfil} />
             </HorizontalScroll>
+        </>
+    );
+}
+export default function Dashnboard({ navigation }){
+    const [visible, setVisible] = useState(true);
+  
+    const showModal = () => setVisible(true);
+    const hideModal = () => setVisible(false);
+    return(
+        <Layout navigation={navigation}>
             <Portal>
                 <Modal visible={visible} style={styles.portal} onDismiss={hideModal} contentContainerStyle={styles.modal}>
                     <Ionicons style={styles.close_modal} size={30} color="rgb(230,230,230)" onPress={hideModal} name="close"/>
                     <Image source={Promotion} style={styles.image_modal}/>
                 </Modal>
             </Portal>
+            <ScrollView
+                horizontal={true}
+                pagingEnabled={true}
+                style={styles.HorizontalScroll}
+            >
+                <Limpeza/>
+                <Limpeza/>
+            </ScrollView>
         </Layout>
-    );
+    )
 }

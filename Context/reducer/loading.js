@@ -1,6 +1,11 @@
 const setLoading = (state = { value: false }, action) => {
-    if(action)
-        return { value: true };
-    return { value: false };
+    
+    switch(action.type){
+        case 'ACTIVE_LOADING':
+            return { value: true };
+        case 'DISABLE_LOADING':
+            return { value: false };
+    }
+    return state;
 }
 export default setLoading;

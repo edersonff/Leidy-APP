@@ -68,7 +68,7 @@ export default function AuthPage() {
     //   })
     //   .then((res) => {
     //     console.log(res.data.token)
-    //     context.setToken(res.data.token);
+    //     context.set("SET_TOKEN",res.data.token);
     //   })
       
     // context.apiAuth().delete("auth/user/");

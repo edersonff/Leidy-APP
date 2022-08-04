@@ -45,5 +45,12 @@ export default StyleSheet.create({
     },
     slide:{
       width: '100%'
+    },
+    FlatList:{
+      height: 1,
+      backgroundColor: 'red'
+    },
+    HorizontalScroll:{
+      width: '100%'
     }
 })

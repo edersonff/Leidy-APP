@@ -7,7 +7,7 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import Pedido from '../../Components/Pedido';
 import Layout from '../Layout/Layout';
-export default function Pedido({ navigation }) {
+export default function Pedidos({ navigation }) {
     const context = Context(store);
     const [ orders, setorders ] = useState([]);
     useEffect(async ()=>{
