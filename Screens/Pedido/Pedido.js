@@ -1,29 +1,29 @@
 import React from 'react';
-import { View, Image, Text } from 'react-native';
-import styles from './Pedido.style'
-import PerfilImage from '../../img/Perfil01.png';
-import Navbar from '../../Components/Navbar';
 import Title from '../../Components/Title';
 import TextBox from '../../Components/TextBox';
 import Context from "../../Context";
 import { store } from "../../App";
-import VerticalScroll from '../../Components/VerticalScroll';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import Layout from '../Layout/Layout';
 import ContainerG from '../../Components/ContainerG';
-export default function Pedido({ navigation }) {
+import BackButton from '../../Components/BackButton';
+
+export default function Pedido({ route, navigation }) {
+    // const { id } = route.params;
+    console.log(route);
     const context = Context(store);
     const [ orders, setorders ] = useState([]);
     useEffect(async ()=>{
-        await context.apiAuth().get('auth/order')
+        await context.apiAuth().get('auth/order/')
          .then((res) => {
              setorders(res.data);
          })
     }, []);
     return (
-        <Layout padding={20} backgroundColor='rgb(240,240,240)' navigation={navigation}>
-            <ContainerG padding={20}>        
+        <Layout padding={15} backgroundColorScoll='#ffffff' navigation={navigation}>
+            <ContainerG padding={20}>   
+                <BackButton go='Pedidos' navagation={navigation}/>
                 <Title center={true}>
                     Sobre
                 </Title>

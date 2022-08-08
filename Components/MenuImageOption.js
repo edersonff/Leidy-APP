@@ -25,8 +25,8 @@ const styles = StyleSheet.create({
     },
     image: {
         resizeMode: 'contain',
-        height: 90,
-        width: 90,
+        height: 50,
+        width: 50,
         borderRadius: 9,
     },
     imageView:{
@@ -34,5 +34,5 @@ const styles = StyleSheet.create({
     }
 })
 const Container = styled.View`
-margin: 0 15px;
+margin: 0 20px;
 `
