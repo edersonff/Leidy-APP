@@ -50,7 +50,11 @@ export default StyleSheet.create({
       height: 1,
       backgroundColor: 'red'
     },
-    HorizontalScroll:{
-      width: '100%'
+    // HorizontalScroll:{
+    //   width: '100%',
+    //   marginRight: 20
+    // },
+    horizontalScrollContainer:{
+      flexDirection: 'row'
     }
 })

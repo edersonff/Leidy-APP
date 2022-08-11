@@ -8,7 +8,7 @@ import { StatusBar as Statusbar } from 'expo-status-bar';
 import {createStore} from 'redux';
 import reducers from './Context/reducer'
 import { Provider } from 'react-redux';
-import { ActivityIndicator, Provider as PaperProvider } from 'react-native-paper';
+import { Provider as PaperProvider } from 'react-native-paper';
 
 import Perfil from './Screens/Perfil/Perfil';
 import Loading from './Screens/Loading/Loading';
