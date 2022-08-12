@@ -22,7 +22,7 @@ export default function Busca({ navigation }) {
         await searchOrder();
     }, []);
     return (
-        <Layout backgroundColor='rgb(230,230,230)' backgroundColorScoll='white' navigation={navigation}>
+        <Layout padding={0} backgroundColor='rgb(230,230,230)' backgroundColorScoll='white' navigation={navigation}>
             <View style={styles.container_searchs}>
                 <View style={styles.container_search}>
                     <Searchbar onBlur={async(e)=>{ await searchOrder(e.target.value) }} style={styles.search_input}/>

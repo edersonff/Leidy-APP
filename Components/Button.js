@@ -3,7 +3,7 @@ import { StyleSheet } from "react-native";
 import { colors } from '../styles/base';
 import { Button } from 'react-native-paper';
 
-export default function Btn({text, fill = false, onPress, style, color}){
+export default function Btn({text, fill = false, onPress, style, color, fontSize}){
     const styles = StyleSheet.create({
         container:{
             width: '100%',
@@ -32,7 +32,7 @@ export default function Btn({text, fill = false, onPress, style, color}){
     })
     return(
         <Button style={styles.btn} contentStyle={[styles.container, fill ? styles.fill : styles.empty]} onPress={onPress}>
-            <Text style={[styles.btn_text, fill ? {color: colors.bg} : {color}]}>{text}</Text>
+            <Text style={[styles.btn_text, fill ? {color: colors.bg} : {color}, {fontSize}]}>{text}</Text>
         </Button>
     )
 }

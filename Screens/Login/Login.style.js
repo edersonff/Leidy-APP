@@ -25,7 +25,7 @@ export default StyleSheet.create({
         justifyContent: 'center'
     },
     form_control:{
-        width: '75%',
+        width: '90%',
         height: '80%',
         marginHorizontal: 'auto',
         justifyContent: 'space-between'

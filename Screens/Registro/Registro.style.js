@@ -9,23 +9,24 @@ export default StyleSheet.create({
         position: 'relative',
         overflow: 'hidden'
     },
-    btns_container: {
-        height: '40%',
-        minWidth: '80%',
-        justifyContent: 'space-evenly'
-    },
-    form:{
-        height: '70%',
+    form_container:{
+        height: '80%',
         backgroundColor: colors.bg,
         position: 'absolute',
+        bottom: 0,
         width: '100%',
         borderTopLeftRadius: '15px',
         borderTopRightRadius: '15px',
         alignItems: 'center',
         justifyContent: 'center'
     },
+    form:{
+        width: '80%',
+        height: '100%',
+        justifyContent: 'center'
+    },
     form_control:{
-        width: '75%',
+        width: '100%',
         height: '70%',
         justifyContent: 'space-between'
     },
@@ -39,7 +40,7 @@ export default StyleSheet.create({
         position: "absolute",
         top: '0',
         width: '100%',
-        height: '30%',
+        height: '20%',
         justifyContent: 'center',
         alignItems: 'center',
         zIndex: 2
@@ -51,6 +52,7 @@ export default StyleSheet.create({
     verify_pass:{
         width: '65px',
         height: 5,
+        marginRight: 10
     },
     pass_fill:{
         backgroundColor: '#32cd32',
@@ -64,12 +66,13 @@ export default StyleSheet.create({
         borderRadius: 3,
     },
     container_verify_pass:{
-        width: '70%',
         flexDirection: 'row',
-        justifyContent: 'space-between'
     },
     title_verify_pass:{
         fontWeight: 'normal',
         marginVertical: '15px',
+    },
+    label_container:{
+        width: '100%',
     }
 })
