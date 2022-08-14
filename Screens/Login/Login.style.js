@@ -19,8 +19,8 @@ export default StyleSheet.create({
         backgroundColor: colors.bg,
         position: 'absolute',
         width: '100%',
-        borderTopLeftRadius: '15px',
-        borderTopRightRadius: '15px',
+        borderTopLeftRadius: 15,
+        borderTopRightRadius: 15,
         alignItems: 'center',
         justifyContent: 'center'
     },
@@ -50,7 +50,7 @@ export default StyleSheet.create({
         fontSize: 30
     },
     verify_pass:{
-        width: '65px',
+        width: 65,
         height: 5,
     },
     pass_fill:{
@@ -71,11 +71,11 @@ export default StyleSheet.create({
     },
     title_verify_pass:{
         fontWeight: 'normal',
-        marginBottom: '30px',
-        marginTop: '30px'
+        marginBottom: 30,
+        marginTop: 30
     },
     input:{
-        marginBottom: '20px',
+        marginBottom: 20,
         borderBottomColor: '#fff'
     }
 })

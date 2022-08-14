@@ -4,21 +4,21 @@ import { Button } from 'react-native-paper';
 import { StyleSheet } from 'react-native';
 import { Modal, Portal, Text } from 'react-native-paper';
 import { useState } from 'react';
-import { View } from 'react-native-web';
+import { View } from 'react-native';
 
-export default function Filter({options, title}){
+export default function Filter({options, title, first, last}){
     const [visible, setVisible] = useState(true);
   
     const showModal = () => setVisible(true);
     const hideModal = () => setVisible(false);
-    console.log(options);
     return(
-        <View style={styles.container_filter}>
-            <Button color='#c0c0c0' onPress={()=>{setVisible(!visible)}} style={styles.btn_container} icon="camera" mode="contained">
-                <FilterContainer>
-                    <FilterText>{title}</FilterText>
-                    {options ? (<Ionicons color='#A0A0A0' style={{display: 'flex', alignItems: 'center' }} name="chevron-down-outline" size={10} />) : (<></>) }
-                </FilterContainer>
+        <View style={[ 
+            first ? {marginLeft: 0} : null , 
+            last ? {marginRight: 0 } : null, 
+            styles.container_filter
+        ]}>
+            <Button onPress={()=>{setVisible(!visible)}} contentStyle={styles.btn_container} style={styles.btn} labelStyle={styles.btn_label} icon="camera" mode="contained">
+                {title}
             </Button>
             {options ? (
                 <View style={[styles.modal_container, {display: visible ? 'flex' : 'none'}]}>
@@ -33,12 +33,15 @@ export default function Filter({options, title}){
     )
 }
 const styles = StyleSheet.create({
-    btn_container: {
-        borderRadius: '25px',
+    btn: {
+        borderRadius: 25,
         backgroundColor: 'rgb(250,250,250)',
         position: 'relative',
         zIndex: 10,
     },
+    btn_label:{
+        color: 'gray',
+    },  
     modal_container:{
         width: '100%',
         backgroundColor: 'white',
@@ -53,24 +56,7 @@ const styles = StyleSheet.create({
     },
     container_filter:{
         position: 'relative',
-        margin: '10px',
+        margin: 10,
         overflow: 'visible',
     }
 })
-const FilterContainer = styled.View`
-    box-sizing: border-box;
-    flex-direction: row;
-    align-items: center;
-`
-const FilterText = styled.Text`
-    color: #A0A0A0;
-    font-size: 10px;
-`
-const ModalItem = styled.Text`
-    width: 100%;
-    text-align: center;
-`
-const Container = styled.View`
-    position: relative;
-    overflow: visible;
-`

@@ -8,7 +8,7 @@ export default function Btn({text, fill = false, onPress, style, color, fontSize
         container:{
             width: '100%',
             backgroundColor: colors.bg,
-            padding: '10px',
+            padding: 10,
             alignItems: 'center',    
             borderRadius: 6,        
             boxShadow: "5px 5px 1px rgb(255,255,255,0.12)",

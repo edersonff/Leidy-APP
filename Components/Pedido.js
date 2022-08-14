@@ -1,16 +1,16 @@
-import { View } from "react-native";
+import { Pressable, View } from "react-native";
 import Title from './Title';
 import TextBox from './TextBox';
 import { StyleSheet, StatusBar } from "react-native";
 
-export default function Pedido({order}){
+export default function Pedido({order, navagation}){
     return(
-        <View style={styles.container_pedido}>
+        <Pressable onPress={()=>{}} style={styles.container_pedido}>
             <View style={styles.pedido_foto}>
             </View>
             <Title weight={'normal'}>{order.title}</Title>
             <TextBox>{order.description}</TextBox>
-        </View>
+        </Pressable>
     )
 }
 

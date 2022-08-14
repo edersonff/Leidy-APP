@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native-web'
+import { StyleSheet } from 'react-native'
 import { Text } from 'react-native'
 
 export default function Title({children, center, color='gray', weight = 'normal', size=26, style, mBottom = 0}){
@@ -12,6 +12,6 @@ export default function Title({children, center, color='gray', weight = 'normal'
 }
 const styles = StyleSheet.create({
     title: {
-        display: 'block'
+        display: 'flex'
     },
 })

@@ -1,9 +1,9 @@
 import { StyleSheet, View } from 'react-native'
 import styled from 'styled-components/native'
 
-export default function PerfilOption({text, rate, src, color = '#000', first}){
+export default function PerfilOption({text, rate, src, color = '#000', first, last}){
     return(
-        <Container>
+        <View style={[{marginLeft: first ? 0 : 'auto', marginRight: last ? 0 : 'auto' }, styles.container]}>
             <MenuImage>
                 <ImageView>
                     <Image source={src}/>
@@ -16,7 +16,7 @@ export default function PerfilOption({text, rate, src, color = '#000', first}){
                     </Description>
                 </View>
             </MenuImage>
-        </Container>
+        </View>
     )
 }
 const styles = StyleSheet.create({
@@ -25,12 +25,12 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'row',
         alignItems: 'center'
+    },
+    container: {
+        fontSize: 24,
+        marginRight: 25,
     }
 });
-const Container = styled.View`
-    fontSize: 24;
-    margin-right: 25px;
-`
 const MenuImage = styled.View`
     textAlign: left;
     width: 80px;

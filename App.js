@@ -21,6 +21,7 @@ import Pedido from './Screens/Pedido/Pedido';
 import Busca from './Screens/Busca/Busca';
 import Context from "./Context";
 import { useContext } from 'react';
+import { useEffect } from 'react';
 
 export const store = createStore(
   reducers,
@@ -34,14 +35,13 @@ export default function App() {
   context.set('ACTIVE_LOADING');
   setTimeout(async ()=>{
     context.set('DISABLE_LOADING');
-    console.log()
   },1000)
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <PaperProvider>
         <Provider store={store}>
-          <NavigationContainer style={style.app_container}>
-            <Stack.Navigator
+          <NavigationContainer>
+            <Stack.Navigator 
               initialRouteName='Registro'
               screenOptions={{
                 headerShown: false,

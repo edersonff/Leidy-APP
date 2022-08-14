@@ -13,9 +13,9 @@ export default StyleSheet.create({
         height: '70%',
         width: '100%',
         backgroundColor: colors.bg,
-        borderRadius: '40px',
+        borderRadius: 40,
         fontSize: 30,
-        padding: '20px'
+        padding: 20
     },
     title:{
         fontSize: 30,
@@ -28,9 +28,9 @@ export default StyleSheet.create({
     },
     goback:{
         backgroundColor: colors.bg,
-        width: '60px',
-        height: '60px',
-        borderRadius: '50px',
+        width: 60,
+        height: 60,
+        borderRadius: 50,
         justifyContent: 'center',
         alignItems: 'center'
     },
@@ -41,6 +41,6 @@ export default StyleSheet.create({
         width: '100%',
         justifyContent: 'center',
         height: '20%',
-        minHeight: '70px'
+        minHeight: 70
     }
 })

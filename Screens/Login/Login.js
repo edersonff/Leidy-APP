@@ -29,11 +29,11 @@ export default function AuthPage(props) {
 
   return (
     <View style={styles.container}>
-      <Pressable
+      <View
         style={styles.logo_container}
       >
         <Text style={styles.logo_text}>{packages.name}</Text>
-      </Pressable>
+      </View>
       <View style={styles.btns_container}>
         
       <View style={styles.form_control}>

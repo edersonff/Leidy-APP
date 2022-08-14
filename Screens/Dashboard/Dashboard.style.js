@@ -46,15 +46,22 @@ export default StyleSheet.create({
     slide:{
       width: '100%'
     },
-    FlatList:{
-      height: 1,
-      backgroundColor: 'red'
+    horizontalScroll:{
+      width: '100%',
+      marginRight: 20
     },
-    // HorizontalScroll:{
-    //   width: '100%',
-    //   marginRight: 20
-    // },
     horizontalScrollContainer:{
-      flexDirection: 'row'
+      flexDirection: 'row',
+      width: '100%'
+    },
+    horizontalMenuSelector:{
+      width: 100,
+      height: 2,
+      backgroundColor: 'blue',
+      position: 'absolute',
+      bottom: 0
+    },
+    horizontalMenu:{
+      position: 'relative',
     }
 })

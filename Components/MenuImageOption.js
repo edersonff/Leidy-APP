@@ -2,9 +2,9 @@ import styled from 'styled-components/native'
 import { StyleSheet, View } from 'react-native'
 import { Image, Text } from 'react-native'
 
-export default function MenuImageOption({text, src, color = '#000', first}){
+export default function MenuImageOption({text, src, color = '#000', first, last}){
     return(
-        <Container style={[{marginLeft: first ? 0 : 'auto'}, styles.container]}>
+        <Container style={[{marginLeft: first ? 0 : 'auto', marginRight: last ? 0 : 'auto' }, styles.container]}>
             <View style={styles.imageView}>
                 <View>
                     <Image style={styles.image} source={src}/>
@@ -16,6 +16,7 @@ export default function MenuImageOption({text, src, color = '#000', first}){
 }
 const styles = StyleSheet.create({
     container: {
+        marginRight: 25,
         fontSize: 24,
     },
     text:{

@@ -6,25 +6,34 @@ import VerticalScroll from '../../Components/VerticalScroll';
 export default function Layout({ navigation, children, padding = 20, backgroundColorScoll = '', margin = 0}) {
     return (
         <View style={styles.layout}>
-            <ScrollView showsHorizontalScrollIndicator={false} style={[{padding}, styles.container_scroll]} contentContainerStyle={[styles.container_layout, {backgroundColor: backgroundColorScoll, padding: margin}]} >
+            <View style={styles.scrollBar} />
+            <ScrollView 
+              showsHorizontalScrollIndicator={false} 
+              style={[{padding}, styles.container_scroll]} 
+              contentContainerStyle={[styles.container, {backgroundColor: backgroundColorScoll, padding: margin}]}
+            >
                 {children}
             </ScrollView>
             <Navbar navigation={navigation} />
         </View>
     );
 }
-
 const styles = StyleSheet.create({
     layout:{
-        flex: 1
+        height: '100%',
+    },
+    scrollBar:{
+        width: '100%',
+        height: Platform.OS === "android" ? StatusBar.currentHeight*1 : 0,
+        backgroundColor: '#fff'
     },
     container: {
         width: '100%',
-        paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
+        minHeight: '90%',
     },
     container_scroll:{
         width: '100%',
-        height: 0,
+        height: '85%'
     },
     container_layout:{
         width: '100%',

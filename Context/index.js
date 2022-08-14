@@ -17,7 +17,7 @@ export default (store) =>{
       });
     },
     get: (state, param) => {
-      return store.getState()[state][param];
+      return param ? store.getState()[state][param] : store.getState()[state];
     },
     apiAuth: () => {
       return axios.create({

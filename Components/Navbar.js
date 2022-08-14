@@ -17,6 +17,7 @@ export default function Navbar({navigation}){
 const Container = styled.View`
 flex: 1;
 width: 100%;
+min-height: 50px;
 justify-content: space-between;
 align-items: center;
 padding: 10px 20px;
@@ -25,8 +26,6 @@ background-color: white;
 border-top-width: 1px;
 border-top-style : solid;
 border-top-color : rgb(230,230,230);
-position: absolute;
-bottom: 0;
 `
 function ItemIcon({onPress, text, icon, routes}){
     const route = useRoute().name;
