@@ -14,6 +14,7 @@ import LineBreak from '../../Components/LineBreak/LineBreak';
 import TextBoxTitle from '../../Components/TextBoxTitle/TextBoxTitle';
 import Heart from '../../Components/Heart/Heart';
 import { useEffect } from 'react';
+import BottomButton from '../../Components/BottomButton/BottomButton';
 const win = Dimensions.get('window');
 
 export default function Pedido({ route, navigation }) {
@@ -26,7 +27,7 @@ export default function Pedido({ route, navigation }) {
     //      })
     // }, []);
     return (
-        <Layout padding={0} backgroundColorScoll='#ffffff' navigation={navigation}>    
+        <Layout padding={0} backgroundColorScoll='#ffffff' navigation={navigation} bottom={<BottomButton/>}>    
         {/* <BackButton go='Pedidos' navagation={navigation}/> */}
             <View style={styles.title_container}>
                 <Image

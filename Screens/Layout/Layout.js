@@ -3,7 +3,7 @@ import { View, StyleSheet, ScrollView, Platform, StatusBar } from 'react-native'
 import Navbar from '../../Components/Navbar';
 import VerticalScroll from '../../Components/VerticalScroll';
 
-export default function Layout({ navigation, children, padding = 20, backgroundColorScoll = '', margin = 0, onScroll}) {
+export default function Layout({ navigation, children, padding = 20, backgroundColorScoll = '', margin = 0, onScroll, bottom}) {
     return (
         <View style={styles.layout}>
             <View style={styles.scrollBar} />
@@ -16,6 +16,7 @@ export default function Layout({ navigation, children, padding = 20, backgroundC
             >
                 {children}
             </ScrollView>
+            {bottom}
             <Navbar navigation={navigation} />
         </View>
     );

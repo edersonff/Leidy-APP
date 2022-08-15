@@ -31,7 +31,7 @@ export default function Btn({text, fill = false, onPress, style, color, fontSize
         }
     })
     return(
-        <Button style={styles.btn} contentStyle={[styles.container, fill ? styles.fill : styles.empty]} onPress={onPress}>
+        <Button style={styles.btn} contentStyle={[styles.container, fill ? styles.fill : styles.empty, style]} onPress={onPress}>
             <Text style={[styles.btn_text, fill ? {color: colors.bg} : {color}, {fontSize}]}>{text}</Text>
         </Button>
     )
