@@ -42,7 +42,7 @@ export default function App() {
         <Provider store={store}>
           <NavigationContainer>
             <Stack.Navigator 
-              initialRouteName='Registro'
+              initialRouteName='Pedido'
               screenOptions={{
                 headerShown: false,
                 animationEnabled: true,

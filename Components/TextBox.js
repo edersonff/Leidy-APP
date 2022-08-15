@@ -1,16 +1,15 @@
 import { StyleSheet } from 'react-native'
 import { Text } from 'react-native'
 
-export default function TextBox({children, center, color='gray', padding = 0, weight = 'normal'}){
+export default function TextBox({children, center, color='gray', padding = 0, weight = 'normal', size = 24}){
     return(
-        <Text style={[styles.textBox, { textAlign: center ? 'center' : 'left', color, padding, fontWeight: weight }]}>
+        <Text style={[styles.textBox, { textAlign: center ? 'center' : 'left', color, padding, fontWeight: weight, fontSize: size}]}>
             {children}
         </Text>
     )
 }
 const styles = StyleSheet.create({
     textBox: {
-        fontSize: 24,
         fontWeight: 'normal',
         width: '100%'
     },

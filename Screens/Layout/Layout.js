@@ -3,11 +3,13 @@ import { View, StyleSheet, ScrollView, Platform, StatusBar } from 'react-native'
 import Navbar from '../../Components/Navbar';
 import VerticalScroll from '../../Components/VerticalScroll';
 
-export default function Layout({ navigation, children, padding = 20, backgroundColorScoll = '', margin = 0}) {
+export default function Layout({ navigation, children, padding = 20, backgroundColorScoll = '', margin = 0, onScroll}) {
     return (
         <View style={styles.layout}>
             <View style={styles.scrollBar} />
             <ScrollView 
+  scroll      EventThrottle={16}
+              onScroll={onScroll}
               showsHorizontalScrollIndicator={false} 
               style={[{padding}, styles.container_scroll]} 
               contentContainerStyle={[styles.container, {backgroundColor: backgroundColorScoll, padding: margin}]}
