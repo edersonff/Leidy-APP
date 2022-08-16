@@ -27,7 +27,7 @@ export default function Pedido({ route, navigation }) {
     //      })
     // }, []);
     return (
-        <Layout padding={0} backgroundColorScoll='#ffffff' navigation={navigation} bottom={<BottomButton/>}>    
+        <Layout padding={0} backgroundColorScoll='#ffffff' navigation={navigation} bottom={<BottomButton>Receber Pedido</BottomButton>}>    
         {/* <BackButton go='Pedidos' navagation={navigation}/> */}
             <View style={styles.title_container}>
                 <Image

@@ -2,7 +2,7 @@ import { StyleSheet, StatusBar } from "react-native";
 export default StyleSheet.create({
   container_pedidos: {
     flex: 1,
-    width: '100%',
+    width: '100%'
   },
   title_container:{
     backgroundColor: '#F2F2F2',
@@ -33,4 +33,13 @@ export default StyleSheet.create({
     height: 200,
     resizeMode: "cover",
   },
+  imageUpload:{
+    width: '100%',
+    height: 266,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  downloadIcon:{
+    rotation: 180
+  }
 });

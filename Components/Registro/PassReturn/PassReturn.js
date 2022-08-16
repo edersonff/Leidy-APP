@@ -32,10 +32,10 @@ export default function PassReturnGroup(){
                 }}
             />
             <Btn
-            onPress={() => { submitRegister() }}
-            text="Fazer cadastro"
-            color="#9949CA"
-            fill={true}
+                onPress={() => { submitRegister() }}
+                text="Fazer cadastro"
+                color="#9949CA"
+                fill={true}
             />
             <View>
             <Text style={styles.title_verify_pass}>Segurança da senha</Text>

@@ -2,10 +2,10 @@ import { StyleSheet, View } from "react-native";
 import { Button } from "react-native-paper";
 import Btn from "../Button";
 
-export default function BottomButton(){
+export default function BottomButton({children}){
     return(
         <View style={styles.container_button}>
-            <Button fill fontSize={24} style={styles.btn} contentStyle={styles.contentStyle} labelStyle={styles.labelStyle} >Receber Pedido</Button>
+            <Button onPress={()=>{}} fill fontSize={24} style={styles.btn} contentStyle={styles.contentStyle} labelStyle={styles.labelStyle} >{children}</Button>
         </View>
     )    
 }
