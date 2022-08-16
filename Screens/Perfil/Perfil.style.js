@@ -1,27 +1,30 @@
 import { StyleSheet, StatusBar } from "react-native";
 export default StyleSheet.create({
-  container: {
-    paddingTop: StatusBar.currentHeight,
-    padding: 20,
-    height: "100%",
-    width: '100%'
+  container_pedidos: {
+    flex: 1,
+    width: '100%',
   },
-  perfil_foto: {
-    width: "100%",
-    padding: 20,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#fff',
+  title_container:{
+    backgroundColor: '#F2F2F2',
   },
-  perfil_desc: {
-    width: "100%",
-    backgroundColor: '#fff',
+  main_status:{
+    paddingBottom: 10,
+    width: '100%',
+    flexDirection: 'row',
+    justifyContent: 'space-between'
   },
-  foto: { 
-    resizeMode: "contain",
-    height: 150,
-    width: 150,
-    borderRadius: 90,
+  type_perfil:{
+    flexDirection: 'row',
+    alignItems: 'center'
   },
-}
-);
+  type_perfil_text:{
+    color: '#000',
+    fontSize: 20,
+    fontWeight: '100'
+  },
+  maps:{
+    width: '100%',
+    height: 200,
+    resizeMode: "cover",
+  },
+});

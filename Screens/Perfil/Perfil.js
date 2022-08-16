@@ -1,57 +1,76 @@
 import React from 'react';
-import { View, Image } from 'react-native';
-import styles from './Perfil.style'
-import PerfilImage from '../../img/Perfil01.png';
-import Navbar from '../../Components/Navbar';
 import Title from '../../Components/Title';
-import TextBox from '../../Components/TextBox';
 import Context from "../../Context";
 import { store } from "../../App";
-import ContainerG from '../../Components/ContainerG';
-import { useEffect } from 'react';
 import { useState } from 'react';
-import Layout from '../Layout/Layout';
-export default function Perfil({ navigation }) {
+import styles from './Perfil.style'
+import Layout from '../Layout/Layout'
+import PerfilImage from '../../img/Perfil01.png';
+import MapsImage from '../../img/Maps.png';
+import ContainerG from '../../Components/ContainerG';
+import { Dimensions, Image, View } from "react-native";
+import { Text } from 'react-native-paper';
+import LineBreak from '../../Components/LineBreak/LineBreak';
+import TextBoxTitle from '../../Components/TextBoxTitle/TextBoxTitle';
+import Heart from '../../Components/Heart/Heart';
+import BottomButton from '../../Components/BottomButton/BottomButton';
+import Rate from '../../Components/Perfil/Rate/Rate';
+const win = Dimensions.get('window');
+
+export default function Perfil({ route, navigation }) {
+    // const { id } = route.params;=
     const context = Context(store);
-    const [ perfilData, setperfilData ] = useState({});
-    useEffect(async ()=>{
-        await context.apiAuth().get('auth/client')
-      .then((res) => {
-        setperfilData(res.data[0]);
-      })
-    }, []);
+    // useEffect(async ()=>{
+    //     await context.apiAuth().get('auth/order/')
+    //      .then((res) => {
+    //          setorders(res.data);
+    //      })
+    // }, []);
     return (
-        <Layout padding={0} backgroundColor='rgb(240,240,240)' navigation={navigation}>
-            <Title center={true} weight={'normal'} size={24} >
-                Pefil
-            </Title>
-            <View style={styles.container}>
-                <View style={styles.perfil_foto}>
-                    <Image style={styles.foto} source={PerfilImage} />
-                    <Title style={{marginTop: 10}} weight={'normal'} center={true} >
-                        {perfilData.name}
-                    </Title>
-                </View>
-                <View style={styles.perfil_desc}>
-                    <ContainerG padding={20}>
-                        <Title center={true}>
-                            Sobre
-                        </Title>
-                        <TextBox padding={10}>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                        </TextBox>
-                    </ContainerG>
-                    
-                    <ContainerG padding={20}>
-                        <Title center={true}>
-                            Sobre
-                        </Title>
-                        <TextBox padding={10}>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                        </TextBox>
+        <Layout padding={0} backgroundColorScoll='#ffffff' navigation={navigation}>    
+        {/* <BackButton go='Pedidos' navagation={navigation}/> */}
+            <View style={styles.title_container}>
+                <Image
+                    style={{
+                        width: '100%',
+                        height: win.width*0.5,
+                        resizeMode: "cover",
+                        alignSelf: "center",
+                        borderRadius: 10,
+                    }}
+                source={PerfilImage}
+                />
+                <View>
+                    <ContainerG style={{marginLeft: 16}}>
+                        <Title color='#000' >Nome do usuario</Title>
                     </ContainerG>
                 </View>
             </View>
+            <ContainerG padding={16}>
+                <View>
+                    <View style={styles.main_status}>
+                        <View style={styles.type_perfil}>
+                            <Text style={styles.type_perfil_text}>Limpeza / lavação</Text>
+                        </View>
+                        <Heart />
+                    </View>               
+                    <LineBreak width={100} />
+                    <ContainerG>
+                        <TextBoxTitle title='Outros serviços' text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam">
+                        </TextBoxTitle>  
+                        <TextBoxTitle title='Avaliações'>
+                            <View style={styles.rates}>
+                                <Rate rate='5.0'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</Rate>
+                                <Rate rate='5.0'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</Rate>
+                                <Rate rate='5.0'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</Rate>
+                            </View>
+                        </TextBoxTitle>  
+                        <TextBoxTitle title='Localização' text="Rua .... Lorem ipsum is placeholder text ">
+                            <Image style={styles.maps} source={MapsImage} />
+                        </TextBoxTitle>
+                    </ContainerG>
+                </View>
+            </ContainerG>
         </Layout>
     );
 }

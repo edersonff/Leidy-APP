@@ -40,7 +40,7 @@ export default function PedidoCreate({ route, navigation }) {
                 </TouchableRipple>
                 <View>
                     <ContainerG>
-                        <EditTextInput >Nome do serviço</EditTextInput>
+                        <EditTextInput marginH={15} >Nome do serviço</EditTextInput>
                     </ContainerG>
                 </View>
             </View>
@@ -48,7 +48,7 @@ export default function PedidoCreate({ route, navigation }) {
                 <View>
                     <View style={styles.main_status}>
                         <View style={styles.price_container}>
-                            <Text style={styles.price}>R$ <EditTextInput width={30}>Preço</EditTextInput>/h</Text>
+                            <Text style={styles.price}>R$<EditTextInput marginH={15} width={40}>Preço</EditTextInput>/h</Text>
                         </View>
                     </View>               
                     <LineBreak width={100} />
@@ -60,7 +60,7 @@ export default function PedidoCreate({ route, navigation }) {
                             <EditTextInput nLines={5} width={100}>Bonificação</EditTextInput>
                         </TextBoxTitle>  
                         <TextBoxTitle title='Localização' text="Rua .... Lorem ipsum is placeholder text ">
-                            <Image style={styles.maps} source={MapsImage} />
+
                         </TextBoxTitle>
                     </ContainerG>
                 </View>

@@ -68,20 +68,6 @@ function DashboardFirst() {
                 <PerfilOption text='Jonathan F.' rate={3.5} src={Perfil} />
                 <PerfilOption text='Jonathan F.' rate={4.5} src={Perfil} last />
             </HorizontalScroll>
-            <HorizontalScroll marginTop={5}>
-                <PerfilOption text='Jonathan F.' rate={1.0} src={Perfil} first />
-                <PerfilOption text='Jonathan F.' rate={5.0} src={Perfil} />
-                <PerfilOption text='Jonathan F.' rate={2.5} src={Perfil} />
-                <PerfilOption text='Jonathan F.' rate={3.5} src={Perfil} />
-                <PerfilOption text='Jonathan F.' rate={4.5} src={Perfil} last />
-            </HorizontalScroll>
-            <HorizontalScroll marginTop={5}>
-                <PerfilOption text='Jonathan F.' rate={1.0} src={Perfil} first />
-                <PerfilOption text='Jonathan F.' rate={5.0} src={Perfil} />
-                <PerfilOption text='Jonathan F.' rate={2.5} src={Perfil} />
-                <PerfilOption text='Jonathan F.' rate={3.5} src={Perfil} />
-                <PerfilOption text='Jonathan F.' rate={4.5} src={Perfil} last />
-            </HorizontalScroll>
         </View>
     );
 }
