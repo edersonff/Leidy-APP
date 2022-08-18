@@ -4,13 +4,13 @@ import ScrolModalItem from "./Item/ScrolModalItem";
 export default function ScrollModal({imgs}){
     return(
         <ScrollView
-            showsHorizontalScrollIndicator={false} 
+            showsHorizontalScrollIndicator={true} 
             horizontal
             pagingEnabled
             style={styles.scroll}
             contentContainerStyle={styles.content_scroll}
         >
-            <ScrolModalItem/>
+        <ScrolModalItem/>
             <ScrolModalItem/>
             <ScrolModalItem/>
             <ScrolModalItem/>
@@ -19,9 +19,7 @@ export default function ScrollModal({imgs}){
 }
 const styles = StyleSheet.create({
     content_scroll:{
-        width: 400,
         flex: 1,
-        flexDirection: 'row'
     },
     scroll:{
         width: 250,

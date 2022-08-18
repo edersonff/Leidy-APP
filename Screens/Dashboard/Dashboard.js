@@ -80,7 +80,7 @@ export default function Dashnboard({ navigation }){
 
     return(
         <Layout backgroundColorScoll='#fff' padding={0} margin={20} navigation={navigation}>
-            <ScrollModal />
+            {/* <ScrollModal /> */}
             <ModalGeneral visible={visible} close={hideModal} image={Promotion} />
             <View>
                 <Text style={styles.address}>R. address, number</Text>
