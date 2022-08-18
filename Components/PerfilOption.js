@@ -1,9 +1,15 @@
-import { StyleSheet, View } from 'react-native'
+import { StyleSheet, TouchableHighlight, View } from 'react-native'
 import styled from 'styled-components/native'
+import * as RootNavigation from '../Components/Util/navigation';
 
 export default function PerfilOption({text, rate, src, color = '#000', first, last}){
     return(
-        <View style={[{marginLeft: first ? 0 : 'auto', marginRight: last ? 0 : 'auto' }, styles.container]}>
+        <TouchableHighlight 
+            style={[{marginLeft: first ? 0 : 'auto', marginRight: last ? 0 : 'auto' }, styles.container]}
+            onPress={()=>{
+                RootNavigation.navigate('Pedido');
+            }}
+        >
             <MenuImage>
                 <ImageView>
                     <Image source={src}/>
@@ -16,7 +22,7 @@ export default function PerfilOption({text, rate, src, color = '#000', first, la
                     </Description>
                 </View>
             </MenuImage>
-        </View>
+        </TouchableHighlight>
     )
 }
 const styles = StyleSheet.create({

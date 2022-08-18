@@ -16,6 +16,7 @@ import Promotion from '../../img/Promotion-example.png'
 import Layout from '../Layout/Layout';
 import ModalGeneral from '../../Components/Modal';
 import MenuSelect from '../../Components/Dashboard/MenuSelect/MenuSelect';
+import ScrollModal from '../../Components/ScrollModal/ScrollModal';
 function DashboardFirst() {
     return (
         <View style={styles.horizontalScroll}>
@@ -79,6 +80,7 @@ export default function Dashnboard({ navigation }){
 
     return(
         <Layout backgroundColorScoll='#fff' padding={0} margin={20} navigation={navigation}>
+            <ScrollModal />
             <ModalGeneral visible={visible} close={hideModal} image={Promotion} />
             <View>
                 <Text style={styles.address}>R. address, number</Text>

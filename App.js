@@ -23,10 +23,23 @@ import Context from "./Context";
 import { useContext } from 'react';
 import { useEffect } from 'react';
 import PedidoCreate from './Screens/Pedido/create/PedidoCreate';
+import { navigationRef } from './Components/Util/navigation';
 export const store = createStore(
   reducers,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()  
 );
+
+const config = {
+  animation: 'spring',
+  config: {
+    stiffness: 1000,
+    damping: 500,
+    mass: 3,
+    overshootClamping: true,
+    restDisplacementThreshold: 0.01,
+    restSpeedThreshold: 0.01,
+  },
+};
 
 const Stack = createStackNavigator();
 export default function App() {
@@ -40,18 +53,17 @@ export default function App() {
     <SafeAreaView style={{ flex: 1 }}>
       <PaperProvider>
         <Provider store={store}>
-          <NavigationContainer>
-            <Stack.Navigator 
-              initialRouteName='Perfil'
+          <NavigationContainer ref={navigationRef}>
+            <Stack.Navigator
+              initialRouteName='Dashboard'
               screenOptions={{
                 headerShown: false,
                 animationEnabled: true,
               }}>
-              <Stack.Screen name="Loading" component={Loading} options={{ gestureDirection: 'horizontal' }} />
-              <Stack.Screen name="Registro" component={Registro} />
-              <Stack.Screen name="Login" component={Login} />
-              <Stack.Screen name="SystemMessage" component={SystemMessage} />
-              
+                <Stack.Screen name="Loading" component={Loading} options={{ gestureDirection: 'horizontal' }} />
+                <Stack.Screen name="Registro" component={Registro} />
+                <Stack.Screen name="Login" component={Login} />
+                <Stack.Screen name="SystemMessage" component={SystemMessage} />
               <Stack.Group 
               screenOptions={{
                 animationEnabled: false
@@ -64,7 +76,11 @@ export default function App() {
               
               <Stack.Group 
               screenOptions={{
-                animationEnabled: true
+                animationEnabled: true,
+                transitionSpec: {
+                  open: config,
+                  close: config,
+                },            
               }}>
                 <Stack.Screen name="Pedido" component={Pedido} />
                 <Stack.Screen name="PedidoCreate" component={PedidoCreate} />
