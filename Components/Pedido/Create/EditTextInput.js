@@ -9,7 +9,7 @@ export default function EditTextInput({children, width = 100, nLines, marginH = 
                 label={children} 
                 mode="outlined" 
                 style={
-                    [styles.input, {height: nLines ? nLines*20 : '100%' }]
+                    [styles.input, {height: 0}]
                 }
                 multiline={nLines ? true : false}
                 numberOfLines={nLines}

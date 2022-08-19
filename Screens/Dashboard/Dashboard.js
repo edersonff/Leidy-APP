@@ -4,71 +4,75 @@ import styles from './Dashboard.style'
 import HorizontalScroll from '../../Components/HorizontalScroll';
 import MenuImageOption from '../../Components/MenuImageOption';
 import PerfilOption from '../../Components/PerfilOption';
-import MenuOption from '../../Components/MenuOption';
 import Menu from '../../img/Menu01.png';
 import Perfil from '../../img/Perfil01.png';
 import Filter from '../../Components/Filter';
-import Navbar from '../../Components/Navbar';
 import { ScrollView, Image, FlatList, View } from 'react-native';
-import VerticalScroll from '../../Components/VerticalScroll';
-import Ionicons from '@expo/vector-icons/Ionicons';
 import Promotion from '../../img/Promotion-example.png'
 import Layout from '../Layout/Layout';
 import ModalGeneral from '../../Components/Modal';
 import MenuSelect from '../../Components/Dashboard/MenuSelect/MenuSelect';
 import ScrollModal from '../../Components/ScrollModal/ScrollModal';
 function DashboardFirst() {
+    const data = [
+        {
+            title: 'Perfis',
+            options:[
+                { title: 'Jonathan F.', rate:1.0, src:Perfil },
+                { title: 'Jonathan F.', rate:1.0, src:Perfil },
+                { title: 'Jonathan F.', rate:1.0, src:Perfil },
+                { title: 'Jonathan F.', rate:1.0, src:Perfil },
+                { title: 'Jonathan F.', rate:1.0, src:Perfil },
+            ]
+        },
+        {
+            title: 'Perfis',
+            options:[
+                { title: 'Jonathan F.', rate:1.0, src:Perfil },
+                { title: 'Jonathan F.', rate:1.0, src:Perfil },
+                { title: 'Jonathan F.', rate:1.0, src:Perfil },
+                { title: 'Jonathan F.', rate:1.0, src:Perfil },
+                { title: 'Jonathan F.', rate:1.0, src:Perfil },
+            ]
+        },
+        {
+            title: 'Perfis',
+            options:[
+                { title: 'Jonathan F.', rate:1.0, src:Perfil },
+                { title: 'Jonathan F.', rate:1.0, src:Perfil },
+                { title: 'Jonathan F.', rate:1.0, src:Perfil },
+                { title: 'Jonathan F.', rate:1.0, src:Perfil },
+                { title: 'Jonathan F.', rate:1.0, src:Perfil },
+            ]
+        },
+        {
+            title: 'Perfis',
+            options:[
+                { title: 'Jonathan F.', rate:1.0, src:Perfil },
+                { title: 'Jonathan F.', rate:1.0, src:Perfil },
+                { title: 'Jonathan F.', rate:1.0, src:Perfil },
+                { title: 'Jonathan F.', rate:1.0, src:Perfil },
+                { title: 'Jonathan F.', rate:1.0, src:Perfil },
+            ]
+        },
+    ]
     return (
         <View style={styles.horizontalScroll}>
-            <HorizontalScroll marginTop={5}>
-                <PerfilOption text='Jonathan F.' rate={1.0} src={Perfil} first />
-                <PerfilOption text='Jonathan F.' rate={5.0} src={Perfil} />
-                <PerfilOption text='Jonathan F.' rate={2.5} src={Perfil} />
-                <PerfilOption text='Jonathan F.' rate={3.5} src={Perfil} />
-                <PerfilOption text='Jonathan F.' rate={4.5} src={Perfil} last />
-            </HorizontalScroll>
-            <HorizontalScroll marginTop={5}>
-                <PerfilOption text='Jonathan F.' rate={1.0} src={Perfil} first />
-                <PerfilOption text='Jonathan F.' rate={5.0} src={Perfil} />
-                <PerfilOption text='Jonathan F.' rate={2.5} src={Perfil} />
-                <PerfilOption text='Jonathan F.' rate={3.5} src={Perfil} />
-                <PerfilOption text='Jonathan F.' rate={4.5} src={Perfil} last />
-            </HorizontalScroll>
-            <HorizontalScroll marginTop={5}>
-                <PerfilOption text='Jonathan F.' rate={1.0} src={Perfil} first />
-                <PerfilOption text='Jonathan F.' rate={5.0} src={Perfil} />
-                <PerfilOption text='Jonathan F.' rate={2.5} src={Perfil} />
-                <PerfilOption text='Jonathan F.' rate={3.5} src={Perfil} />
-                <PerfilOption text='Jonathan F.' rate={4.5} src={Perfil} last />
-            </HorizontalScroll>
-            <HorizontalScroll marginTop={5}>
-                <PerfilOption text='Jonathan F.' rate={1.0} src={Perfil} first />
-                <PerfilOption text='Jonathan F.' rate={5.0} src={Perfil} />
-                <PerfilOption text='Jonathan F.' rate={2.5} src={Perfil} />
-                <PerfilOption text='Jonathan F.' rate={3.5} src={Perfil} />
-                <PerfilOption text='Jonathan F.' rate={4.5} src={Perfil} last />
-            </HorizontalScroll>
-            <HorizontalScroll marginTop={5}>
-                <PerfilOption text='Jonathan F.' rate={1.0} src={Perfil} first />
-                <PerfilOption text='Jonathan F.' rate={5.0} src={Perfil} />
-                <PerfilOption text='Jonathan F.' rate={2.5} src={Perfil} />
-                <PerfilOption text='Jonathan F.' rate={3.5} src={Perfil} />
-                <PerfilOption text='Jonathan F.' rate={4.5} src={Perfil} last />
-            </HorizontalScroll>
-            <HorizontalScroll marginTop={5}>
-                <PerfilOption text='Jonathan F.' rate={1.0} src={Perfil} first />
-                <PerfilOption text='Jonathan F.' rate={5.0} src={Perfil} />
-                <PerfilOption text='Jonathan F.' rate={2.5} src={Perfil} />
-                <PerfilOption text='Jonathan F.' rate={3.5} src={Perfil} />
-                <PerfilOption text='Jonathan F.' rate={4.5} src={Perfil} last />
-            </HorizontalScroll>
-            <HorizontalScroll marginTop={5}>
-                <PerfilOption text='Jonathan F.' rate={1.0} src={Perfil} first />
-                <PerfilOption text='Jonathan F.' rate={5.0} src={Perfil} />
-                <PerfilOption text='Jonathan F.' rate={2.5} src={Perfil} />
-                <PerfilOption text='Jonathan F.' rate={3.5} src={Perfil} />
-                <PerfilOption text='Jonathan F.' rate={4.5} src={Perfil} last />
-            </HorizontalScroll>
+            <FlatList 
+                data={data}
+                renderItem={(data)=>{
+                    return(
+                        <HorizontalScroll renderItem={(data)=>{
+                                const id = data.id;
+                                return (
+                                    <PerfilOption text={data.title} rate={data.rate} src={data.src}  />
+                                )
+                            }} 
+                            data={data} marginTop={5}>
+                        </HorizontalScroll>
+                    )
+                }
+            } />
         </View>
     );
 }

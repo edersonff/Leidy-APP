@@ -10,6 +10,6 @@ export default function Heart(){
 }
 const styles = StyleSheet.create({ 
   heart:{
-    color: 'pink'
+    color: '#c53c3c'
   }
 })
