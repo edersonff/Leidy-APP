@@ -2,12 +2,12 @@ import { StyleSheet, TouchableOpacity, View } from 'react-native'
 import styled from 'styled-components/native'
 import * as RootNavigation from '../Components/Util/navigation';
 
-export default function PerfilOption({text, rate, src, color = '#000', first, last}){
+export default function PerfilOption({id, text, rate, src, first, last}){
     return(
         <TouchableOpacity 
-            style={[{marginLeft: first ? 0 : 'auto', marginRight: last ? 0 : 'auto' }, styles.container]}
+            style={[{marginLeft: first ? 0 : null , marginRight: last ? 0 : null}, styles.container]}
             onPress={()=>{
-                RootNavigation.navigate('Pedido');
+                RootNavigation.navigate('Pedido', {id});
             }}
         >
             <MenuImage>
@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
     },
     container: {
         fontSize: 24,
-        marginRight: 25,
+        marginHorizontal: 12.5,
     }
 });
 const MenuImage = styled.View`

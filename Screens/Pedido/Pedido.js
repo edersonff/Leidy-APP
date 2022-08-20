@@ -18,7 +18,7 @@ import BottomButton from '../../Components/BottomButton/BottomButton';
 const win = Dimensions.get('window');
 
 export default function Pedido({ route, navigation }) {
-    // const { id } = route.params;=
+    const { id } = route.params;
     const context = Context(store);
     // useEffect(async ()=>{
     //     await context.apiAuth().get('auth/order/')

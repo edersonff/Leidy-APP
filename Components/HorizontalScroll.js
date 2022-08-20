@@ -1,6 +1,6 @@
-import {  View, ScrollView, StyleSheet, FlatList } from 'react-native';
+import {  View, ScrollView, StyleSheet, FlatList, Text } from 'react-native';
 
-export default function HorizontalScroll({children, marginTop = 10, style, data, renderItem}){
+export default function HorizontalScroll({children, marginTop = 10, style, list, renderItem}){
     const styles = StyleSheet.create({
         menu: {
           flexGrow: 1,
@@ -15,7 +15,7 @@ export default function HorizontalScroll({children, marginTop = 10, style, data,
     })
     return(
         <View style={[{ marginTop }, style]} >
-            <FlatList data={data} renderItem={renderItem} showsHorizontalScrollIndicator={false} horizontal contentContainerStyle={styles.menu} />
+            <FlatList data={list} renderItem={renderItem} showsHorizontalScrollIndicator={false} horizontal contentContainerStyle={styles.menu} />
         </View>
     )
 }

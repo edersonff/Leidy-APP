@@ -55,21 +55,43 @@ function DashboardFirst() {
                 { title: 'Jonathan F.', rate:1.0, src:Perfil },
             ]
         },
+        {
+            title: 'Perfis',
+            options:[
+                { title: 'Jonathan F.', rate:1.0, src:Perfil },
+                { title: 'Jonathan F.', rate:1.0, src:Perfil },
+                { title: 'Jonathan F.', rate:1.0, src:Perfil },
+                { title: 'Jonathan F.', rate:1.0, src:Perfil },
+                { title: 'Jonathan F.', rate:1.0, src:Perfil },
+            ]
+        },
+        {
+            title: 'Perfis',
+            options:[
+                { title: 'Jonathan F.', rate:1.0, src:Perfil },
+                { title: 'Jonathan F.', rate:1.0, src:Perfil },
+                { title: 'Jonathan F.', rate:1.0, src:Perfil },
+                { title: 'Jonathan F.', rate:1.0, src:Perfil },
+                { title: 'Jonathan F.', rate:1.0, src:Perfil },
+            ]
+        },
     ]
     return (
         <View style={styles.horizontalScroll}>
             <FlatList 
                 data={data}
-                renderItem={(data)=>{
+                renderItem={(list)=>{
                     return(
-                        <HorizontalScroll renderItem={(data)=>{
-                                const id = data.id;
+                        <HorizontalScroll 
+                            renderItem={(data)=>{
+                                const id = data.index;
+                                const item = data.item;
                                 return (
-                                    <PerfilOption text={data.title} rate={data.rate} src={data.src}  />
+                                    <PerfilOption id={id} text={item.title} rate={item.rate} src={item.src} first={id == 0} last={id+1 == list.item.options.length} />
                                 )
                             }} 
-                            data={data} marginTop={5}>
-                        </HorizontalScroll>
+                            list={list.item.options} marginTop={5}
+                        />
                     )
                 }
             } />
@@ -115,7 +137,6 @@ export default function Dashnboard({ navigation }){
                     decelerationRate="fast"
                     pagingEnabled
                 >
-                    <DashboardFirst/>
                     <DashboardFirst/>
                 </ScrollView>
             </View>
