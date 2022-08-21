@@ -1,9 +1,6 @@
-import { useState } from "react";
-import { useEffect, useRef } from "react";
-import { Animated, StyleSheet, Text, View } from "react-native";
+import { useRef } from "react";
+import { StyleSheet, Text, View } from "react-native";
 import { TextInput } from "react-native-paper";
-import { store } from "../../../App";
-import Context from "../../../Context";
 import { colors } from "../../../styles/base";
 import PassReturnGroup from "../PassReturn/PassReturn";
 const width = [];

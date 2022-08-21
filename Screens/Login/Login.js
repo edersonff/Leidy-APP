@@ -1,12 +1,11 @@
 import React, { useRef } from "react";
 import { View, Pressable, Text } from "react-native";
 import styles from "./Login.style";
-import { store } from "../../App";
 import Context, { api } from "../../Context";
 import { packages } from "../../styles/base";
 import Btn from "../../Components/Button";
 import { TextInput } from 'react-native-paper';
-
+import { store } from "../../Context/context";
 export default function AuthPage(props) {
   const context = Context(store);
   const email = useRef(null);

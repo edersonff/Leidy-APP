@@ -34,13 +34,15 @@ export default function Filter({options, title, first, last}){
 }
 const styles = StyleSheet.create({
     btn: {
-        borderRadius: 25,
-        backgroundColor: 'rgb(250,250,250)',
+        borderRadius: 10,
+        backgroundColor: 'rgb(255,255,255)',
         position: 'relative',
         zIndex: 10,
     },
     btn_label:{
         color: 'gray',
+        fontSize: 12,
+        letterSpacing: 0
     },  
     modal_container:{
         width: '100%',

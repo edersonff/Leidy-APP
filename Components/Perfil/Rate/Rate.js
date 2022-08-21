@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import TextBox from "../../TextBox";
 
 export default function Rate({rate = '0.0', children}){
@@ -9,16 +9,16 @@ export default function Rate({rate = '0.0', children}){
         return `rgb(${red}, ${green},0)`
     }
     return(
-        <View style={styles.rate_container}>
+        <TouchableOpacity style={styles.rate_container}>
             <View style={styles.rate_number_container}>
                 <Text style={[styles.rate_number, {color: rateToColor(parseFloat(rate))}]}>{rate}</Text>
             </View>
             <View style={styles.rate_text_container}>
-                <TextBox size={'15px'} color={'#A3A3A3'}>
+                <TextBox size={15} color={'#A3A3A3'}>
                     {children}
                 </TextBox>
             </View>
-        </View>
+        </TouchableOpacity>
     )
 }
 const styles = StyleSheet.create({
@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
     },
     rate_number:{
         fontWeight: '700',
-        fontSize: '40px'
+        fontSize: 40
     },
     rate_text:{
     },

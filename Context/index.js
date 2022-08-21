@@ -1,9 +1,6 @@
 import axios from "axios";
-import { store } from "../App";
 import { packages } from "../styles/base";
-import Context from './';
 const baseURL = packages.api
-
 export const api = axios.create({
   baseURL
 });

@@ -2,14 +2,13 @@ import React from 'react';
 import { View, Image, Text } from 'react-native';
 import styles from './Busca.style'
 import Context from "../../Context";
-import { store } from "../../App";
 import { useEffect } from 'react';
 import { useState } from 'react';
-import Pedido from '../../Components/Pedido';
+import Pedido from '../../Components/Pedidos/Pedido/Pedido';
 import { Searchbar } from 'react-native-paper';
 import Layout from '../Layout/Layout';
-
-export default function Busca({ navigation }) {
+import { store } from '../../Context/context';
+export default function Busca() {
     let context = Context(store);
     const [searchs, setSearchs] = useState([]);
     async function searchOrder(query = ''){
@@ -22,7 +21,7 @@ export default function Busca({ navigation }) {
         await searchOrder();
     }, []);
     return (
-        <Layout padding={0} backgroundColor='rgb(230,230,230)' backgroundColorScoll='white' navigation={navigation}>
+        <Layout padding={0} backgroundColor='rgb(230,230,230)' backgroundColorScoll='white' >
             <View style={styles.container_searchs}>
                 <View style={styles.container_search}>
                     <Searchbar onBlur={async(e)=>{ await searchOrder(e.target.value) }} style={styles.search_input}/>

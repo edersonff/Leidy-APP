@@ -1,10 +1,10 @@
 import styled from 'styled-components/native'
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { useRoute } from '@react-navigation/native';
+import { navigate } from '../Components/Util/navigation';
 
-export default function Navbar({navigation}){
-    
-    const onPress=(nav) => {navigation.navigate(nav)};
+export default function Navbar(){
+    const onPress=(nav) => {navigate(nav)};
     return(
         <Container>
             <ItemIcon routes='Dashboard' onPress={()=>onPress('Dashboard')} icon="home-outline" text="Inicio" />
@@ -15,12 +15,9 @@ export default function Navbar({navigation}){
     )
 }
 const Container = styled.View`
-    flex: 1;
     width: 100%;
-    min-height: 50px;
-    justify-content: space-between;
+    height: 70px;
     align-items: center;
-    padding: 10px 20px;
     flex-direction: row;
     background-color: white;
     border-top-width: 1px;
@@ -31,7 +28,7 @@ function ItemIcon({onPress, text, icon, routes}){
     const route = useRoute().name;
     return(
         <IconContainer onPress={onPress}>
-            <Ionicons style={{color: route == routes ? 'black' : 'gray' }} name={icon} size={23} />
+            <Ionicons style={{color: route == routes ? 'black' : 'gray' }} name={icon} size={25} />
             <IconText>{text}</IconText>
         </IconContainer>
     )
@@ -41,6 +38,7 @@ const IconText = styled.Text`
     text-align: center;
 `
 const IconContainer = styled.TouchableOpacity`
+    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;

@@ -1,33 +1,22 @@
 import React from 'react';
 import Title from '../../Components/Title';
-import Context from "../../Context";
-import { store } from "../../App";
-import { useState } from 'react';
 import styles from './Pedido.style'
 import Layout from '../Layout/Layout'
 import PerfilImage from '../../img/Perfil01.png';
 import MapsImage from '../../img/Maps.png';
 import ContainerG from '../../Components/ContainerG';
-import { Dimensions, Image, TouchableOpacity, View } from "react-native";
+import { Dimensions, Image, View } from "react-native";
 import { Text } from 'react-native-paper';
 import LineBreak from '../../Components/LineBreak/LineBreak';
 import TextBoxTitle from '../../Components/TextBoxTitle/TextBoxTitle';
 import Heart from '../../Components/Heart/Heart';
-import { useEffect } from 'react';
 import BottomButton from '../../Components/BottomButton/BottomButton';
+import UseLoader from '../../Context/loading/UseLoader';
 const win = Dimensions.get('window');
-
 export default function Pedido({ route, navigation }) {
-    const { id } = route.params;
-    const context = Context(store);
-    // useEffect(async ()=>{
-    //     await context.apiAuth().get('auth/order/')
-    //      .then((res) => {
-    //          setorders(res.data);
-    //      })
-    // }, []);
+    const [Load, toggleLoad] = UseLoader();
     return (
-        <Layout padding={0} backgroundColorScoll='#ffffff' navigation={navigation} bottom={<BottomButton>Receber Pedido</BottomButton>}>    
+        <Layout padding={0} backgroundColorScoll='#ffffff'  bottom={<><BottomButton onPress={()=>{toggleLoad()}}>Receber Pedido</BottomButton>{Load}</>}>    
         {/* <BackButton go='Pedidos' navagation={navigation}/> */}
             <View style={styles.title_container}>
                 <Image

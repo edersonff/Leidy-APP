@@ -1,4 +1,5 @@
 import axios from 'axios';
+// import { store } from '../Context/context';
 
 export const colors = {
     primary: '#68AAFF',

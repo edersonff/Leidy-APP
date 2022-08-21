@@ -1,8 +1,6 @@
 import React from 'react';
 import Title from '../../Components/Title';
 import Context from "../../Context";
-import { store } from "../../App";
-import { useState } from 'react';
 import styles from './Perfil.style'
 import Layout from '../Layout/Layout'
 import PerfilImage from '../../img/Perfil01.png';
@@ -13,10 +11,9 @@ import { Text } from 'react-native-paper';
 import LineBreak from '../../Components/LineBreak/LineBreak';
 import TextBoxTitle from '../../Components/TextBoxTitle/TextBoxTitle';
 import Heart from '../../Components/Heart/Heart';
-import BottomButton from '../../Components/BottomButton/BottomButton';
 import Rate from '../../Components/Perfil/Rate/Rate';
+import { store } from '../../Context/context';
 const win = Dimensions.get('window');
-
 export default function Perfil({ route, navigation }) {
     // const { id } = route.params;=
     const context = Context(store);
@@ -27,7 +24,7 @@ export default function Perfil({ route, navigation }) {
     //      })
     // }, []);
     return (
-        <Layout padding={0} backgroundColorScoll='#ffffff' navigation={navigation}>    
+        <Layout padding={0} backgroundColorScoll='#ffffff' >    
         {/* <BackButton go='Pedidos' navagation={navigation}/> */}
             <View style={styles.title_container}>
                 <Image

@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { View, StyleSheet, ScrollView, Platform, StatusBar } from 'react-native';
 import Navbar from '../../Components/Navbar';
-import VerticalScroll from '../../Components/VerticalScroll';
 
 export default function Layout({ navigation, children, padding = 20, backgroundColorScoll = '', margin = 0, onScroll, bottom}) {
     return (
@@ -17,7 +16,7 @@ export default function Layout({ navigation, children, padding = 20, backgroundC
                 {children}
             </ScrollView>
             {bottom}
-            <Navbar navigation={navigation} />
+            <Navbar  />
         </View>
     );
 }

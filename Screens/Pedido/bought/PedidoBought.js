@@ -1,18 +1,24 @@
 import React from 'react';
+import Title from '../../../Components/Title';
 import Context from "../../../Context";
-import styles from './PedidoCreate.style'
+import { store } from "../../../App";
+import { useState } from 'react';
+import styles from './PedidoBought.style'
 import Layout from '../../Layout/Layout'
+import PerfilImage from '../../../img/Perfil01.png';
+import MapsImage from '../../../img/Maps.png';
 import ContainerG from '../../../Components/ContainerG';
 import { Dimensions, Image, View } from "react-native";
 import { Text, TextInput, TouchableRipple } from 'react-native-paper';
 import LineBreak from '../../../Components/LineBreak/LineBreak';
 import TextBoxTitle from '../../../Components/TextBoxTitle/TextBoxTitle';
+import Heart from '../../../Components/Heart/Heart';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import BottomButton from '../../../Components/BottomButton/BottomButton';
 import EditTextInput from '../../../Components/Pedido/Create/EditTextInput';
-import { store } from '../../../Context/context';
 const win = Dimensions.get('window');
-export default function PedidoCreate({ route, navigation }) {
+
+export default function PedidoBought({ route, navigation }) {
     // const { id } = route.params;=
     const context = Context(store);
     // useEffect(async ()=>{
@@ -42,7 +48,7 @@ export default function PedidoCreate({ route, navigation }) {
                 <View>
                     <View style={styles.main_status}>
                         <View style={styles.price_container}>
-                            <Text style={styles.price}>R$<EditTextInput marginH={15} width={40}>Preço</EditTextInput>/h</Text>
+                            <Text style={styles.price}>R$<EditTextInput height={30} marginH={15} width={40}>Preço</EditTextInput>/h</Text>
                         </View>
                     </View>               
                     <LineBreak width={100} />

@@ -98,36 +98,46 @@ function DashboardFirst() {
         </View>
     );
 }
-export default function Dashnboard({ navigation }){
-    const [visible, setVisible] = useState(false);
+export default function Dashnboard(){
 
-    const showModal = () => setVisible(true);
-    const hideModal = () => setVisible(false);
-
+    const filters = [
+        { title: 'Relevante',  options:[ 'Small', 'Normal', 'Big' ]},
+        { title: 'Período', options:[ 'Small', 'Normal', 'Big' ]},
+        { title: 'Preços', options:[ 'Small', 'Normal', 'Big' ]},
+        { title: 'Ordem' },
+    ]
+    const menuImageOptions = [
+        { title: 'Lavação'},
+        { title: 'Lavação'},
+        { title: 'Lavação'},
+        { title: 'Lavação' },
+        { title: 'Lavação' },
+        { title: 'Lavação' },
+        { title: 'Lavação' },
+        { title: 'Lavação' },
+        { title: 'Lavação' },
+    ]
     return(
-        <Layout backgroundColorScoll='#fff' padding={0} margin={20} navigation={navigation}>
+        <Layout backgroundColorScoll='#fff' padding={0} margin={20} >
             {/* <ScrollModal /> */}
-            <ModalGeneral visible={visible} close={hideModal} image={Promotion} />
+            <ModalGeneral carousels={['', '', '', '']} image={Promotion} />
             <View>
                 <Text style={styles.address}>R. address, number</Text>
                 <MenuSelect/>
-                <HorizontalScroll>
-                    <Filter title="Relevante" first />
-                    <Filter title="Período" options={[ 'Small', 'Normal', 'Big' ]} />
-                    <Filter title="Preços" options={[ 'Small', 'Normal', 'Big' ]} />
-                    <Filter title="Ordem" options={[ 'Small', 'Normal', 'Big' ]} last />
-                </HorizontalScroll>
-                <HorizontalScroll marginTop={10}>
-                    <MenuImageOption text='Limpeza' src={Menu} first />
-                    <MenuImageOption text='Lavação' src={Menu} />
-                    <MenuImageOption text='Lavação' src={Menu} />
-                    <MenuImageOption text='Lavação' src={Menu} />
-                    <MenuImageOption text='Lavação' src={Menu} />
-                    <MenuImageOption text='Lavação' src={Menu} />
-                    <MenuImageOption text='Lavação' src={Menu} />
-                    <MenuImageOption text='Lavação' src={Menu} />
-                    <MenuImageOption text='Lavação' src={Menu} last />
-                </HorizontalScroll>
+                <HorizontalScroll list={filters} renderItem={(data)=>{
+                    const id = data.index;
+                    const item = data.item;
+                    return (
+                        <Filter id={id} title={item.title} options={item.options} first={id == 0} last={id+1 == filters.length} />
+                    )
+                }}/>
+                <HorizontalScroll list={menuImageOptions} renderItem={(data)=>{
+                    const id = data.index;
+                    const item = data.item;
+                    return (
+                        <MenuImageOption text={item.title} src={Menu} first={id == 0} last={id+1 == filters.length} />
+                    )
+                }}/>
                 <ScrollView
                     horizontal={true}
                     contentContainerStyle={styles.horizontalScrollContainer}

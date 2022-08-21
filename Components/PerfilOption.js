@@ -1,13 +1,13 @@
 import { StyleSheet, TouchableOpacity, View } from 'react-native'
 import styled from 'styled-components/native'
-import * as RootNavigation from '../Components/Util/navigation';
+import { navigate } from '../Components/Util/navigation';
 
 export default function PerfilOption({id, text, rate, src, first, last}){
     return(
         <TouchableOpacity 
             style={[{marginLeft: first ? 0 : null , marginRight: last ? 0 : null}, styles.container]}
             onPress={()=>{
-                RootNavigation.navigate('Pedido', {id});
+                navigate('Pedido', {id});
             }}
         >
             <MenuImage>

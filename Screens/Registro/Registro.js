@@ -1,14 +1,7 @@
-import React, { useEffect, useRef } from "react";
-import { Text, View, Pressable, Animated } from "react-native";
+import React from "react";
+import { Text, View } from "react-native";
 import { packages } from "../../styles/base";
-import Btn from "../../Components/Button";
 import styles from "./Registro.style";
-import { passwordStrength } from "check-password-strength";
-import Animation from "../../Helpers/Animation";
-import { store } from "../../App";
-import Context, { api } from "../../Context";
-import { TextInput } from 'react-native-paper';
-import Ionicons from '@expo/vector-icons/Ionicons';
 import Title from "../../Components/Title";
 import Inputs from "../../Components/Registro/Inputs/Inputs";
 
