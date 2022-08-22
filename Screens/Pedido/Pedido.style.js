@@ -33,4 +33,8 @@ export default StyleSheet.create({
     height: 200,
     resizeMode: "cover",
   },
+  icons:{
+    flexDirection: 'row',
+    alignItems: 'center',
+  }
 });

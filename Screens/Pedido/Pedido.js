@@ -12,9 +12,12 @@ import TextBoxTitle from '../../Components/TextBoxTitle/TextBoxTitle';
 import Heart from '../../Components/Heart/Heart';
 import BottomButton from '../../Components/BottomButton/BottomButton';
 import UseLoader from '../../Context/loading/UseLoader';
+import Ionicons from '@expo/vector-icons/Ionicons';
+import CircleSelect from '../../Components/Select/Circle/CircleSelect';
+import { navigate } from '../../Components/Util/navigation';
 const win = Dimensions.get('window');
 export default function Pedido({ route, navigation }) {
-    const [Load, toggleLoad] = UseLoader(PerfilImage);
+    const [Load, toggleLoad] = UseLoader();
     return (
         <Layout padding={0} backgroundColorScoll='#ffffff'  bottom={<><BottomButton onPress={()=>{toggleLoad()}}>Receber Pedido</BottomButton>{Load}</>}>    
         {/* <BackButton go='Pedidos' navagation={navigation}/> */}
@@ -42,7 +45,12 @@ export default function Pedido({ route, navigation }) {
                             <Text style={styles.price}>R$ 14/h</Text>
                             <Text style={styles.bonus}>+20% bonus</Text>
                         </View>
-                        <Heart />
+                        <View style={styles.icons}>
+                            <CircleSelect onPress={()=>{navigate('Chat')}}>
+                                <Ionicons name='chatbubbles-outline' size={30} />
+                            </CircleSelect>
+                            <Heart />
+                        </View>
                     </View>               
                     <LineBreak width={100} />
                     <ContainerG>

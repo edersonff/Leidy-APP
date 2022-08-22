@@ -2,12 +2,14 @@ import React, { useEffect } from 'react';
 import { View, StyleSheet, ScrollView, Platform, StatusBar } from 'react-native';
 import Navbar from '../../Components/Navbar';
 
-export default function Layout({ navigation, children, padding = 20, backgroundColorScoll = '', margin = 0, onScroll, bottom}) {
+export default function Layout({ top, children, padding = 20, backgroundColorScoll = '', margin = 0, onScroll, bottom}) {
     return (
         <View style={styles.layout}>
             <View style={styles.scrollBar} />
+            {top}
             <ScrollView 
-  scroll      EventThrottle={16}
+              scroll      
+              EventThrottle={16}
               onScroll={onScroll}
               showsHorizontalScrollIndicator={false} 
               style={[{padding}, styles.container_scroll]} 

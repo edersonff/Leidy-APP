@@ -14,6 +14,7 @@ import Busca from './Screens/Busca/Busca';
 import PedidoCreate from './Screens/Pedido/create/PedidoCreate';
 import { navigationRef } from './Components/Util/navigation';
 import PedidoBought from './Screens/Pedido/bought/PedidoBought';
+import Chat from "./Screens/Chat/Chat";
 
 const config = {
   animation: 'spring',
@@ -32,7 +33,7 @@ export default function Navigator() {
   return (
     <NavigationContainer ref={navigationRef}>
     <Stack.Navigator
-        initialRouteName='Loading'
+        initialRouteName='Pedido'
         screenOptions={{
         headerShown: false,
         animationEnabled: true,
@@ -62,6 +63,7 @@ export default function Navigator() {
         <Stack.Screen name="Pedido" component={Pedido} />
         <Stack.Screen name="PedidoCreate" component={PedidoCreate} />
         <Stack.Screen name="PedidoBought" component={PedidoBought} />
+        <Stack.Screen name="Chat" component={Chat} />
         </Stack.Group>
     </Stack.Navigator>
     <Statusbar/>

@@ -34,32 +34,31 @@ export default function AuthPage(props) {
         <Text style={styles.logo_text}>{packages.name}</Text>
       </View>
       <View style={styles.btns_container}>
-        
-      <View style={styles.form_control}>
-          <TextInput
-            color={'white'}
-            style={styles.input}
-            secure={false}
-            placeholder="Digite seu email"
-            useRef={email}
-            name={"Email"}
-          />
-          <TextInput
-            color={'white'}
-            style={styles.input}
-            secure={true}
-            placeholder="Digite sua senha"
-            name={"Senha"}
-            useRef={password}
-          />
-          <Btn
-            onPress={() => {
-              submitLogin();
-            }}
-            text="Fazer Login"
-            color="#9949CA"
-            fill={true}
-          />
+        <View style={styles.form_control}>
+            <TextInput
+              color={'white'}
+              style={styles.input}
+              secure={false}
+              placeholder="Digite seu email"
+              useRef={email}
+              name={"Email"}
+            />
+            <TextInput
+              color={'white'}
+              style={styles.input}
+              secure={true}
+              placeholder="Digite sua senha"
+              name={"Senha"}
+              useRef={password}
+            />
+            <Btn
+              onPress={() => {
+                submitLogin();
+              }}
+              text="Fazer Login"
+              color="#9949CA"
+              fill={true}
+            />
         </View>
       </View>
     </View>
