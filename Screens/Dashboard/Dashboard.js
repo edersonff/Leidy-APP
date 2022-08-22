@@ -107,15 +107,15 @@ export default function Dashnboard(){
         { title: 'Ordem' },
     ]
     const menuImageOptions = [
-        { title: 'Lavação'},
-        { title: 'Lavação'},
-        { title: 'Lavação'},
-        { title: 'Lavação' },
-        { title: 'Lavação' },
-        { title: 'Lavação' },
-        { title: 'Lavação' },
-        { title: 'Lavação' },
-        { title: 'Lavação' },
+        { title: 'Lavação', src: 0},
+        { title: 'Lavação', src: 0 },
+        { title: 'Lavação', src: 0},
+        { title: 'Lavação', src: 0 },
+        { title: 'Lavação', src: 0 },
+        { title: 'Lavação', src: 0 },
+        { title: 'Lavação', src: 0 },
+        { title: 'Lavação', src: 0 },
+        { title: 'Lavação', src: 0 },
     ]
     return(
         <Layout backgroundColorScoll='#fff' padding={0} margin={20} >

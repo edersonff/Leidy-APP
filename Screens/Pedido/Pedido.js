@@ -14,7 +14,7 @@ import BottomButton from '../../Components/BottomButton/BottomButton';
 import UseLoader from '../../Context/loading/UseLoader';
 const win = Dimensions.get('window');
 export default function Pedido({ route, navigation }) {
-    const [Load, toggleLoad] = UseLoader();
+    const [Load, toggleLoad] = UseLoader(PerfilImage);
     return (
         <Layout padding={0} backgroundColorScoll='#ffffff'  bottom={<><BottomButton onPress={()=>{toggleLoad()}}>Receber Pedido</BottomButton>{Load}</>}>    
         {/* <BackButton go='Pedidos' navagation={navigation}/> */}

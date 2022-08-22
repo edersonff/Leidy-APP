@@ -1,18 +1,13 @@
 import React from 'react';
-import Title from '../../../Components/Title';
 import Context from "../../../Context";
-import { store } from "../../../App";
-import { useState } from 'react';
+import { store } from '../../../Context/context';
 import styles from './PedidoBought.style'
 import Layout from '../../Layout/Layout'
-import PerfilImage from '../../../img/Perfil01.png';
-import MapsImage from '../../../img/Maps.png';
 import ContainerG from '../../../Components/ContainerG';
-import { Dimensions, Image, View } from "react-native";
-import { Text, TextInput, TouchableRipple } from 'react-native-paper';
+import { Dimensions, View } from "react-native";
+import { Text, TouchableRipple } from 'react-native-paper';
 import LineBreak from '../../../Components/LineBreak/LineBreak';
 import TextBoxTitle from '../../../Components/TextBoxTitle/TextBoxTitle';
-import Heart from '../../../Components/Heart/Heart';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import BottomButton from '../../../Components/BottomButton/BottomButton';
 import EditTextInput from '../../../Components/Pedido/Create/EditTextInput';

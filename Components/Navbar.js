@@ -2,6 +2,8 @@ import styled from 'styled-components/native'
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { useRoute } from '@react-navigation/native';
 import { navigate } from '../Components/Util/navigation';
+import CircleSelect from './Select/Circle/CircleSelect';
+import { StyleSheet, View } from 'react-native';
 
 export default function Navbar(){
     const onPress=(nav) => {navigate(nav)};
@@ -27,16 +29,33 @@ const Container = styled.View`
 function ItemIcon({onPress, text, icon, routes}){
     const route = useRoute().name;
     return(
-        <IconContainer onPress={onPress}>
-            <Ionicons style={{color: route == routes ? 'black' : 'gray' }} name={icon} size={25} />
-            <IconText>{text}</IconText>
-        </IconContainer>
+        <CircleSelect style={styles.circleSelect} styleContent={styles.circleSelect_content} color='#eeeeee' onPress={onPress}>
+            <>
+                <Ionicons style={{color: route == routes ? 'black' : 'gray' }} name={icon} size={25} />
+                <IconText>{text}</IconText>
+            </>
+        </CircleSelect>
     )
 }
 const IconText = styled.Text`
     font-size: 11px;
     text-align: center;
 `
+const styles = StyleSheet.create({
+    circleSelect:{
+        flex: 1,
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent:'center',
+    },
+    circleSelect_content:{
+        width: '100%',
+        height: '100%',
+        justifyContent: 'center',
+        alignItems: 'center'
+    }
+})
 const IconContainer = styled.TouchableOpacity`
     flex: 1;
     display: flex;

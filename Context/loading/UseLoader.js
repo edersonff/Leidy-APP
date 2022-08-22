@@ -1,10 +1,12 @@
 import { useState } from "react"
-import { ActivityIndicator, Pressable, StyleSheet } from "react-native"
+import { ActivityIndicator, Image, Pressable, StyleSheet } from "react-native"
 
 const UseLoader = (type) => {
     const [ load, setLoad ] = useState(false);
     return[
-        load ? <Pressable style={styles.loading} pointerEvents={'none'}><ActivityIndicator size={70} /></Pressable> : null,
+        load ?  <Pressable style={styles.loading} pointerEvents={'none'}>
+                  {type ? <Image style={styles.image} source={type} /> : <ActivityIndicator size={70} />}
+                </Pressable> : null,
         () => setLoad(!load),
     ];
 }
@@ -19,6 +21,10 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
+  image:{
+    resizeMode: 'contain',
+    width: '50%'
+  }
 })
 
 export default UseLoader;
