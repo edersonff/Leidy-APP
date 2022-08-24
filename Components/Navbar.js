@@ -3,9 +3,17 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 import { useRoute } from '@react-navigation/native';
 import { navigate } from '../Components/Util/navigation';
 import CircleSelect from './Select/Circle/CircleSelect';
-import { StyleSheet, View } from 'react-native';
+import { Keyboard, StyleSheet, View } from 'react-native';
+import { useState } from 'react';
 
 export default function Navbar(){
+    const [visible, setVisible] = useState(true);
+    if(!visible){
+        return;
+    }
+    const invertVisible = () =>setVisible(!visible);
+    Keyboard.addListener( 'keyboardDidShow', () =>setVisible(false));
+    Keyboard.addListener( 'keyboardDidHide', () =>setVisible(true));
     const onPress=(nav) => {navigate(nav)};
     return(
         <Container>
@@ -18,7 +26,7 @@ export default function Navbar(){
 }
 const Container = styled.View`
     width: 100%;
-    height: 70px;
+    height: 55px;
     align-items: center;
     flex-direction: row;
     background-color: white;

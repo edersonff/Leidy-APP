@@ -2,7 +2,7 @@ import { StyleSheet, Text, View, Image } from "react-native";
 
 export default function ChatMessage({color, textColor, date, children, right}){
     return(
-        <View style={{flex: 1, flexDirection: 'column', alignItems: right ? 'flex-end' : 'flex-start'}}>
+        <View style={{flexDirection: 'column', alignItems: right ? 'flex-end' : 'flex-start', marginVertical: 10}}>
             <View style={[
                 styles.chat_container,
                 {backgroundColor: color},
@@ -20,14 +20,12 @@ const styles = StyleSheet.create({
         minWidth: '40%',
         padding: 10,
         borderRadius: 15,
-        marginBottom: 10,
+        marginBottom: 5,
         maxWidth: '60%',
     },
     date:{
-        color: 'black',
-        fontSize: 10
+        color: 'gray',
+        fontSize: 8,
+        marginHorizontal: 5
     },
-    text:{
-
-    }
 });

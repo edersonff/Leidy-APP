@@ -1,27 +1,33 @@
-import { useRef } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { createRef, useRef } from "react";
+import { Button, StyleSheet, Text, View } from "react-native";
 import { TextInput } from "react-native-paper";
 import { colors } from "../../../styles/base";
 import PassReturnGroup from "../PassReturn/PassReturn";
 const width = [];
 export default function Inputs(){
-    const name = useRef(null);
-    const email = useRef(null);
+    let name, email;    
     return(
       <View style={styles.form_control}>
-        <TextInput
+        <TextInput  
           style={styles.input}
           mode="outlined"
           label="Digite seu nome"
-          ref={name}
+          onChange={(e)=>{
+            name = e.target;
+          }}
         />
         <TextInput
           style={styles.input}
           autoComplete="email"
           mode="outlined"
           label="Digite seu email"
-          ref={email}
+          onChange={(e)=>{
+            email = e.target;
+          }}
         />
+        <Button onPress={()=>{
+            console.log(email)
+        }} title={'AAAAA'} />
         <PassReturnGroup />
       </View>
     )

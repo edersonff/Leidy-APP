@@ -6,7 +6,7 @@ import PerfilImage from '../../img/Perfil01.png';
 import MapsImage from '../../img/Maps.png';
 import ContainerG from '../../Components/ContainerG';
 import { Dimensions, Image, View } from "react-native";
-import { Text } from 'react-native-paper';
+import { Text, TextInput } from 'react-native-paper';
 import LineBreak from '../../Components/LineBreak/LineBreak';
 import TextBoxTitle from '../../Components/TextBoxTitle/TextBoxTitle';
 import Heart from '../../Components/Heart/Heart';
@@ -20,29 +20,39 @@ const win = Dimensions.get('window');
 export default function Chat({ route, navigation }) {
     const [Load, toggleLoad] = UseLoader();
     return (
-        <Layout top={
+        <Layout 
+        top={
             <View style={styles.head_container}>
                 <Image source={MapsImage} style={styles.image_head}></Image>
                 <Text style={styles.userName}>Nome do usúario</Text>
             </View>
-        } padding={0} backgroundColorScoll='#ffffff' >
+        } 
+        bottom={
+            <View style={styles.chat_textInput_container}>
+                <TextInput style={styles.chat_textInput}></TextInput>
+                <CircleSelect style={styles.chat_textInput_send} styleContent={styles.chat_textInput_send_content} onPress={()=>{}}>
+                    <Ionicons name='send' size={25} /> 
+                </CircleSelect>
+            </View>
+        }
+        padding={0} backgroundColorScoll='#ffffff' >
             <View style={styles.chat_container}>
                 <ChatMessage date={"20/12/2004"} textColor={'#fff'} color={'blue'} right>
                 AAAAAAAAAAAAAAAAAAAA
                 </ChatMessage>
-                <ChatMessage textColor={'#000'} color={'lightgreen'}>
+                <ChatMessage date={"20/12/2004"} textColor={'#000'} color={'lightgreen'}>
                 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
                 </ChatMessage>
-                <ChatMessage textColor={'#fff'} color={'blue'} right>
+                <ChatMessage date={"20/12/2004"} textColor={'#fff'} color={'blue'} right>
                 AAAAAAAAAAAAAAAAAAAA
                 </ChatMessage>
-                <ChatMessage textColor={'#000'} color={'lightgreen'}>
+                <ChatMessage date={"20/12/2004"} textColor={'#000'} color={'lightgreen'}>
                 AAAAAAAAAAAAAAAAAAAA
                 </ChatMessage>
-                <ChatMessage textColor={'#fff'} color={'blue'} right>
+                <ChatMessage date={"20/12/2004"} textColor={'#fff'} color={'blue'} right>
                 AAAAAAAAAAAAAAAAAAAA
                 </ChatMessage>
-                <ChatMessage textColor={'#000'} color={'lightgreen'}>
+                <ChatMessage date={"20/12/2004"} textColor={'#000'} color={'lightgreen'}>
                 AAAAAAAAAAAAAAAAAAAA
                 </ChatMessage>
             </View>

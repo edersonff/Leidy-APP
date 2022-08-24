@@ -33,10 +33,11 @@ export default function Navigator() {
   return (
     <NavigationContainer ref={navigationRef}>
     <Stack.Navigator
-        initialRouteName='Pedido'
+        initialRouteName='Registro'
         screenOptions={{
-        headerShown: false,
-        animationEnabled: true,
+          headerShown: false,
+          animationEnabled: true,
+          "tabBarHideOnKeyboard":"true",
         }}>
         <Stack.Screen name="Loading" component={Loading} options={{ gestureDirection: 'horizontal' }} />
         <Stack.Screen name="Registro" component={Registro} />
@@ -59,6 +60,7 @@ export default function Navigator() {
             open: config,
             close: config,
         },            
+        keyboardHandlingEnabled: true,
         }}>
         <Stack.Screen name="Pedido" component={Pedido} />
         <Stack.Screen name="PedidoCreate" component={PedidoCreate} />

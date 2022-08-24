@@ -73,7 +73,6 @@ function PassReturn({pass}) {
                 style={[
                     styles.verify_pass,
                     styles.pass_fill,
-                    { width: width },
                 ]}
             />
         </View>

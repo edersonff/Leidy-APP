@@ -18,7 +18,7 @@ export default function Layout({ top, children, padding = 20, backgroundColorSco
                 {children}
             </ScrollView>
             {bottom}
-            <Navbar  />
+            <Navbar />
         </View>
     );
 }
