@@ -19,7 +19,7 @@ export default function ModalGeneral({ image, children, style, carousels }){
                       return(
                         <View style={styles.carousel_image_container}>
                           {/* <Image source={image} style={styles.carousel_image}/> */}
-
+                          <Text>A</Text>
                         </View>
                       )
                     }} />
@@ -39,7 +39,8 @@ const styles = StyleSheet.create({
         height: '50%',
         position: 'relative',
         overflow: 'hidden',
-        backgroundColor: '#fff'
+        backgroundColor: '#fff',
+        width: '100%',
       },
       portal:{
         justifyContent:'center',
@@ -59,14 +60,14 @@ const styles = StyleSheet.create({
       carousel:{
         backgroundColor: 'blue',
         flex: 1,
+        width: '100%',
       },
       carousel_content:{
-        // width: '100%',
-        // backgroundColor: 'orange',
+        width: '100%',
       },
       carousel_image_container:{
         backgroundColor: 'orange',
-        width: 320,
+        width: '100%',
         marginRight: 10,
 
       },
