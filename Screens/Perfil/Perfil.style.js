@@ -35,8 +35,8 @@ export default StyleSheet.create({
   rate_list_container_portal:{
     justifyContent:'center',
     alignItems: 'center',
-    width: '80%',
-    height: '60%',
+    width: '85%',
+    height: '80%',
     backgroundColor: '#fff',
     padding: 20,
   },

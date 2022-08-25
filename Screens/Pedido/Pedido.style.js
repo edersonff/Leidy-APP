@@ -34,8 +34,12 @@ export default StyleSheet.create({
   icons:{
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'flex-end',
+    justifyContent: 'space-between',
     padding: 10,
+    width: '100%',
+    position: 'absolute',
+    top: 0,
+    right: 0,
   },
   important_values:{
     flexDirection: 'row',

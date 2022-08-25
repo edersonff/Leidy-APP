@@ -35,6 +35,12 @@ export default function Pedido({ route, navigation }) {
                     }}
                     source={PerfilImage}
                 />
+                <View style={styles.icons}>
+                    <CircleSelect onPress={()=>{navigate('Chat')}}>
+                        <Ionicons name='chatbubbles-outline' size={30} />
+                    </CircleSelect>
+                    <Heart />
+                </View>
             </View>
             <View style={styles.content}>
                 <View>
@@ -50,15 +56,9 @@ export default function Pedido({ route, navigation }) {
                                 <FillText color={'lightgreen'}>+20% bonus</FillText>
                             </View>
                         </View>
-                        <View style={styles.icons}>
-                            <CircleSelect onPress={()=>{navigate('Chat')}}>
-                                <Ionicons name='chatbubbles-outline' size={30} />
-                            </CircleSelect>
-                            <Heart />
-                        </View>
                     </View>
                     
-                    <ContainerG>
+                    <ContainerG padding={15}>
                         <TextBoxTitle title='Descrição' text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam">
                         </TextBoxTitle>  
                         <TextBoxTitle title='Bonificação' text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam">
