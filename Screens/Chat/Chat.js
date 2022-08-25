@@ -33,27 +33,54 @@ export default function Chat({ route, navigation }) {
                 <CircleSelect style={styles.chat_textInput_send} styleContent={styles.chat_textInput_send_content} onPress={()=>{}}>
                     <Ionicons name='send' size={25} /> 
                 </CircleSelect>
+                <CircleSelect style={styles.chat_textInput_attach} styleContent={styles.chat_textInput_send_content} onPress={()=>{}}>
+                    <Ionicons name='attach' size={25} /> 
+                </CircleSelect>
             </View>
         }
         padding={0} backgroundColorScoll='#ffffff' >
             <View style={styles.chat_container}>
                 <ChatMessage date={"20/12/2004"} textColor={'#fff'} color={'blue'} right>
-                AAAAAAAAAAAAAAAAAAAA
+                Azul
                 </ChatMessage>
-                <ChatMessage date={"20/12/2004"} textColor={'#000'} color={'lightgreen'}>
-                AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-                </ChatMessage>
-                <ChatMessage date={"20/12/2004"} textColor={'#fff'} color={'blue'} right>
-                AAAAAAAAAAAAAAAAAAAA
-                </ChatMessage>
-                <ChatMessage date={"20/12/2004"} textColor={'#000'} color={'lightgreen'}>
-                AAAAAAAAAAAAAAAAAAAA
+                <ChatMessage date={"20/12/2004"} textColor={'#fff'} color={'red'} left>
+                Azul
                 </ChatMessage>
                 <ChatMessage date={"20/12/2004"} textColor={'#fff'} color={'blue'} right>
-                AAAAAAAAAAAAAAAAAAAA
+                Azul
+                </ChatMessage>
+                <ChatMessage date={"20/12/2004"} textColor={'#fff'} color={'red'} left>
+                Azul
+                </ChatMessage>
+                <ChatMessage date={"20/12/2004"} textColor={'#fff'} color={'blue'} right>
+                Azul
+                </ChatMessage>
+                <ChatMessage date={"20/12/2004"} textColor={'#fff'} color={'red'} left>
+                Azul
+                </ChatMessage>
+                <ChatMessage date={"20/12/2004"} textColor={'#fff'} color={'blue'} right>
+                Azul
+                </ChatMessage>
+                <ChatMessage date={"20/12/2004"} textColor={'#fff'} color={'red'} left>
+                Azul
+                </ChatMessage>
+                <ChatMessage date={"20/12/2004"} textColor={'#fff'} color={'blue'} right>
+                Azul
                 </ChatMessage>
                 <ChatMessage date={"20/12/2004"} textColor={'#000'} color={'lightgreen'}>
-                AAAAAAAAAAAAAAAAAAAA
+                Azul
+                </ChatMessage>
+                <ChatMessage date={"20/12/2004"} textColor={'#fff'} color={'blue'} right>
+                Azul
+                </ChatMessage>
+                <ChatMessage date={"20/12/2004"} textColor={'#000'} color={'lightgreen'}>
+                Azul
+                </ChatMessage>
+                <ChatMessage date={"20/12/2004"} textColor={'#fff'} color={'blue'} right>
+                Azul
+                </ChatMessage>
+                <ChatMessage date={"20/12/2004"} textColor={'#000'} color={'lightgreen'}>
+                Azul
                 </ChatMessage>
             </View>
         </Layout>

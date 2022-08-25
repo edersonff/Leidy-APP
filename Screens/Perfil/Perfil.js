@@ -7,22 +7,18 @@ import PerfilImage from '../../img/Perfil01.png';
 import MapsImage from '../../img/Maps.png';
 import ContainerG from '../../Components/ContainerG';
 import { Dimensions, Image, View } from "react-native";
-import { Text } from 'react-native-paper';
+import { Text, TouchableRipple, Modal, Portal } from 'react-native-paper';
 import LineBreak from '../../Components/LineBreak/LineBreak';
 import TextBoxTitle from '../../Components/TextBoxTitle/TextBoxTitle';
 import Heart from '../../Components/Heart/Heart';
 import Rate from '../../Components/Perfil/Rate/Rate';
-import { store } from '../../Context/context';
+import { useState } from 'react';
+import HorizontalScroll from '../../Components/HorizontalScroll';
 const win = Dimensions.get('window');
 export default function Perfil({ route, navigation }) {
-    // const { id } = route.params;=
-    const context = Context(store);
-    // useEffect(async ()=>{
-    //     await context.apiAuth().get('auth/order/')
-    //      .then((res) => {
-    //          setorders(res.data);
-    //      })
-    // }, []);
+    const [ rateModal, setRateModal ] = useState(true);
+    const showModal = () => setRateModal(true);
+    const close = () => {setRateModal(false)}
     return (
         <Layout padding={0} backgroundColorScoll='#ffffff' >    
         {/* <BackButton go='Pedidos' navagation={navigation}/> */}
@@ -60,6 +56,7 @@ export default function Perfil({ route, navigation }) {
                                 <Rate rate='5.0'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</Rate>
                                 <Rate rate='5.0'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</Rate>
                                 <Rate rate='5.0'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</Rate>
+                                <TouchableRipple style={styles.seeMore_container} onPress={()=>{ setRateModal(true) }}><Text>Ver mais</Text></TouchableRipple>
                             </View>
                         </TextBoxTitle>  
                         <TextBoxTitle title='Localização' text="Rua .... Lorem ipsum is placeholder text ">
@@ -68,6 +65,16 @@ export default function Perfil({ route, navigation }) {
                     </ContainerG>
                 </View>
             </ContainerG>
+            
+            <Portal>
+                <Modal contentContainerStyle={styles.rate_list_container_portal} style={styles.rate_list_container} onDismiss={close} visible={rateModal}>
+                    <Text>Avaliação</Text>
+                    <HorizontalScroll style={styles.rate_item_types} list={[{title: 'Boa'}, {title: 'Media'}, {title: 'Ruim'}]} renderItem={(data)=>{
+                        const item = data.item;
+                        return(<View style={styles.rate_item_type}><Text style={styles.rate_item_type_text}>{item.title}</Text></View>);
+                    }} />
+                </Modal>
+            </Portal>
         </Layout>
     );
 }

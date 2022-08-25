@@ -37,7 +37,7 @@ const Container = styled.View`
 function ItemIcon({onPress, text, icon, routes}){
     const route = useRoute().name;
     return(
-        <CircleSelect style={styles.circleSelect} styleContent={styles.circleSelect_content} color='#eeeeee' onPress={onPress}>
+        <CircleSelect style={styles.circleSelect} styleContent={styles.circleSelect_content} color='#33333' onPress={onPress}>
             <>
                 <Ionicons style={{color: route == routes ? 'black' : 'gray' }} name={icon} size={25} />
                 <IconText>{text}</IconText>

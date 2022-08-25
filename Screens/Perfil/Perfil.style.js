@@ -27,4 +27,35 @@ export default StyleSheet.create({
     height: 200,
     resizeMode: "cover",
   },
+  seeMore_container:{
+    justifyContent: 'center',
+    flexDirection: 'row',
+    padding: 10,
+  },
+  rate_list_container_portal:{
+    justifyContent:'center',
+    alignItems: 'center',
+    width: '80%',
+    height: '60%',
+    backgroundColor: '#fff',
+  },
+  rate_list_container:{
+    justifyContent:'center',
+    alignItems: 'center',
+  },
+  rate_item_type:{
+    width: 100,
+    height: '100%',
+    backgroundColor: 'red',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginRight : 20
+  },
+  rate_item_type_text:{
+    fontSize: 20,
+    color: '#222222'
+  },
+  rate_item_types:{
+    height: 50,
+  }
 });

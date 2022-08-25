@@ -47,7 +47,7 @@ export default StyleSheet.create({
         alignItems: 'center'
     },
     chat_textInput_send:{
-        marginHorizontal: 15,
+        marginLeft: 15,
     },
     chat_textInput_send_content:{
         padding: 12,

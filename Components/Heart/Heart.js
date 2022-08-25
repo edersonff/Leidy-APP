@@ -6,7 +6,7 @@ export default function Heart(){
     const [ hearth, setHearth ] = useState(false);
     const changeHearth = () => { setHearth(!hearth); }
     return(
-      <CircleSelect onPress={()=>{changeHearth()}}>
+      <CircleSelect color='#9999999' onPress={()=>{changeHearth()}}>
         <Ionicons style={styles.heart} name={hearth ? 'heart' : 'heart-outline'} size={30}/>  
       </CircleSelect>
     )

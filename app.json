@@ -1,5 +1,9 @@
 {
   "expo": {
+    "androidStatusBar": {
+      "backgroundColor": "red",
+      "translucent": false
+    },
     "name": "01",
     "slug": "01",
     "version": "1.0.0",
