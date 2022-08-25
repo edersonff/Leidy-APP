@@ -38,6 +38,7 @@ export default StyleSheet.create({
     width: '80%',
     height: '60%',
     backgroundColor: '#fff',
+    padding: 20,
   },
   rate_list_container:{
     justifyContent:'center',

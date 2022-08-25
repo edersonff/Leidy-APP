@@ -1,10 +1,11 @@
 import { StyleSheet, TouchableOpacity, View } from 'react-native'
 import styled from 'styled-components/native'
 import { navigate } from '../Components/Util/navigation';
+import { TouchableRipple } from 'react-native-paper';
 
 export default function PerfilOption({id, text, rate, src, first, last}){
     return(
-        <TouchableOpacity 
+        <TouchableRipple 
             style={[{marginLeft: first ? 0 : null , marginRight: last ? 0 : null}, styles.container]}
             onPress={()=>{
                 navigate('Pedido', {id});
@@ -22,7 +23,7 @@ export default function PerfilOption({id, text, rate, src, first, last}){
                     </Description>
                 </View>
             </MenuImage>
-        </TouchableOpacity>
+        </TouchableRipple>
     )
 }
 const styles = StyleSheet.create({

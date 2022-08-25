@@ -10,17 +10,15 @@ export default StyleSheet.create({
   main_status:{
     paddingBottom: 10,
     width: '100%',
-    flexDirection: 'row',
     justifyContent: 'space-between'
   },
   price_container:{
-    flexDirection: 'row',
     alignItems: 'center'
 
   },
   price:{
     color: '#000',
-    fontSize: 24,
+    fontSize: 18,
     fontWeight: '600'
   },
   bonus:{
@@ -36,5 +34,22 @@ export default StyleSheet.create({
   icons:{
     flexDirection: 'row',
     alignItems: 'center',
+    justifyContent: 'flex-end',
+    padding: 10,
+  },
+  important_values:{
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    width: '100%',
+    backgroundColor: '#f5f5f5',
+    padding: 20,
+  },
+  content:{ 
+    borderTopRightRadius: 40,
+    borderTopLeftRadius: 40, 
+    position: 'relative',
+    bottom: 35,
+    backgroundColor: '#fff'
   }
 });

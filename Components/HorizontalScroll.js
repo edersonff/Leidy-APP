@@ -15,7 +15,7 @@ export default function HorizontalScroll({children, marginTop = 10, style, list,
     })
     return(
         <View style={[{ marginTop }, style]} >
-            <FlatList  data={list} indicatorStyle={{color: 'red'}} renderItem={renderItem} showsHorizontalScrollIndicator={false} horizontal contentContainerStyle={styles.menu} />
+            <FlatList data={list} indicatorStyle={{color: 'red'}} renderItem={renderItem} showsHorizontalScrollIndicator={false} horizontal contentContainerStyle={styles.menu} />
         </View>
     )
 }

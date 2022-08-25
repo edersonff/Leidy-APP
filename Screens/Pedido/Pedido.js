@@ -2,7 +2,7 @@ import React from 'react';
 import Title from '../../Components/Title';
 import styles from './Pedido.style'
 import Layout from '../Layout/Layout'
-import PerfilImage from '../../img/Perfil01.png';
+import PerfilImage from '../../img/teste.png';
 import MapsImage from '../../img/Maps.png';
 import ContainerG from '../../Components/ContainerG';
 import { Dimensions, Image, View } from "react-native";
@@ -15,6 +15,9 @@ import UseLoader from '../../Context/loading/UseLoader';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import CircleSelect from '../../Components/Select/Circle/CircleSelect';
 import { navigate } from '../../Components/Util/navigation';
+import Local from '../../Components/Pedido/Local/Local';
+import ImportantValue from '../../Components/Pedido/ImportantValue/ImportantValue';
+import FillText from '../../Components/FillText/FillText';
 const win = Dimensions.get('window');
 export default function Pedido({ route, navigation }) {
     const [Load, toggleLoad] = UseLoader();
@@ -25,25 +28,27 @@ export default function Pedido({ route, navigation }) {
                 <Image
                     style={{
                         width: '100%',
-                        height: win.width*0.5,
+                        height: win.width*0.7,
                         resizeMode: "cover",
                         alignSelf: "center",
                         borderRadius: 10,
                     }}
-                source={PerfilImage}
+                    source={PerfilImage}
                 />
-                <View>
-                    <ContainerG style={{marginLeft: 16}}>
-                        <Title color='#000' >Nome do serviço</Title>
-                    </ContainerG>
-                </View>
             </View>
-            <ContainerG padding={16}>
+            <View style={styles.content}>
                 <View>
                     <View style={styles.main_status}>
                         <View style={styles.price_container}>
-                            <Text style={styles.price}>R$ 14/h</Text>
-                            <Text style={styles.bonus}>+20% bonus</Text>
+                            <View style={{justifyContent: 'center', alignItems: 'center', padding: 20}}>
+                                <Title color='#000' weight='bold' >Nome do serviço</Title>
+                                <Local locate={'R. Waldemar rau 141'} />
+                            </View>
+                            <View style={styles.important_values}>
+                                <ImportantValue title="R$14">por hora</ImportantValue>
+                                <ImportantValue title="R$14">por hora</ImportantValue>
+                                <FillText color={'lightgreen'}>+20% bonus</FillText>
+                            </View>
                         </View>
                         <View style={styles.icons}>
                             <CircleSelect onPress={()=>{navigate('Chat')}}>
@@ -51,8 +56,8 @@ export default function Pedido({ route, navigation }) {
                             </CircleSelect>
                             <Heart />
                         </View>
-                    </View>               
-                    <LineBreak width={100} />
+                    </View>
+                    
                     <ContainerG>
                         <TextBoxTitle title='Descrição' text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam">
                         </TextBoxTitle>  
@@ -63,7 +68,7 @@ export default function Pedido({ route, navigation }) {
                         </TextBoxTitle>
                     </ContainerG>
                 </View>
-            </ContainerG>
+            </View>
         </Layout>
     );
 }

@@ -5,7 +5,7 @@ import HorizontalScroll from '../../Components/HorizontalScroll';
 import MenuImageOption from '../../Components/MenuImageOption';
 import PerfilOption from '../../Components/PerfilOption';
 import Menu from '../../img/Menu01.png';
-import Perfil from '../../img/Perfil01.png';
+import Perfil from '../../img/teste.png';
 import Filter from '../../Components/Filter';
 import { ScrollView, Image, FlatList, View } from 'react-native';
 import Promotion from '../../img/Promotion-example.png'

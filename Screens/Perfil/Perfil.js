@@ -6,7 +6,7 @@ import Layout from '../Layout/Layout'
 import PerfilImage from '../../img/Perfil01.png';
 import MapsImage from '../../img/Maps.png';
 import ContainerG from '../../Components/ContainerG';
-import { Dimensions, Image, View } from "react-native";
+import { Dimensions, FlatList, Image, View } from "react-native";
 import { Text, TouchableRipple, Modal, Portal } from 'react-native-paper';
 import LineBreak from '../../Components/LineBreak/LineBreak';
 import TextBoxTitle from '../../Components/TextBoxTitle/TextBoxTitle';
@@ -73,6 +73,17 @@ export default function Perfil({ route, navigation }) {
                         const item = data.item;
                         return(<View style={styles.rate_item_type}><Text style={styles.rate_item_type_text}>{item.title}</Text></View>);
                     }} />
+                    
+                    <FlatList 
+                        scroll      
+                        EventThrottle={16}
+                        showsHorizontalScrollIndicator={true} 
+                        data={[{title: 'Boa'}, {title: 'Media'}, {title: 'Ruim'}]}
+                        style={{width: '100%', marginTop: 20}}
+                        renderItem={(data)=>{
+                            return(<Rate rate='5.0'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</Rate>)
+                        }}
+                    />
                 </Modal>
             </Portal>
         </Layout>
