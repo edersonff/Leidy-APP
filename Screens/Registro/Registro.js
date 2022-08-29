@@ -18,7 +18,7 @@ export default function AuthPage() {
       <View style={styles.form_container}>
         <View style={styles.form}>
           <View style={styles.label_container}>
-            <Title mBottom={5}>Titulo</Title>
+            <Title center mBottom={15}>Registrar</Title>
           </View>
           <Inputs />
         </View>
