@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Modal, Portal, Text } from 'react-native-paper';
 import Ionicons from '@expo/vector-icons/Ionicons';
-import { FlatList, Image, StyleSheet, View } from 'react-native';
+import { Dimensions, FlatList, Image, StyleSheet, View } from 'react-native';
 
 export default function ModalGeneral({ image, children, style, carousels }){
     const [visible, setVisible] = useState(true);
@@ -13,17 +13,16 @@ export default function ModalGeneral({ image, children, style, carousels }){
             <Modal visible={visible} style={[styles.portal, style]} onDismiss={close} contentContainerStyle={styles.modal}>
                 <Ionicons style={styles.close_modal} size={30} color="rgb(230,230,230)" onPress={close} name="close"/>
                   {children}
-                  {carousels ? (
-                    <FlatList 
-                      pagingEnabled horizontal data={carousels} style={styles.carousel} contentContainerStyle={styles.carousel_content} renderItem={(carousel)=>{
-                      return(
-                        <View style={styles.carousel_image_container}>
-                          {/* <Image source={image} style={styles.carousel_image}/> */}
-                          <Text>A</Text>
-                        </View>
-                      )
-                    }} />
-                  ) : null }
+                    {carousels ? (
+                      <FlatList 
+                        pagingEnabled horizontal data={carousels} style={styles.carousel} contentContainerStyle={styles.carousel_content} renderItem={(carousel)=>{
+                        return(
+                          <View style={styles.carousel_image_container}>
+                            <Image source={image} style={styles.carousel_image}/>
+                          </View>
+                        )
+                      }} />
+                    ) : null }
                   {/* {image ? (
                       <Image source={image} style={styles.image_modal}/>
                   ) : null } */}
@@ -31,16 +30,16 @@ export default function ModalGeneral({ image, children, style, carousels }){
         </Portal>
     )
 }
+
+const win = Dimensions.get('window');
 const styles = StyleSheet.create({
     modal:{
         padding: 0, 
         borderRadius: 15,
-        width: '90%',
         height: '50%',
         position: 'relative',
         overflow: 'hidden',
         backgroundColor: '#fff',
-        width: '100%',
       },
       portal:{
         justifyContent:'center',
@@ -60,17 +59,16 @@ const styles = StyleSheet.create({
       carousel:{
         backgroundColor: 'blue',
         flex: 1,
-        width: '100%',
+        width: win.width*0.8,
       },
       carousel_content:{
-        width: '100%',
       },
       carousel_image_container:{
-        backgroundColor: 'orange',
-        width: '100%',
-        marginRight: 10,
+        width: win.width*0.8,
 
       },
       carousel_image:{
+        width: '100%',
+        height: '100%'
       },
 })

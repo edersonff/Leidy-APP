@@ -16,7 +16,6 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 import CircleSelect from '../../Components/Select/Circle/CircleSelect';
 import { navigate } from '../../Components/Util/navigation';
 import ChatMessage from '../../Components/Chat/Message/ChatMessage';
-const win = Dimensions.get('window');
 export default function Chat({ route, navigation }) {
     const [Load, toggleLoad] = UseLoader();
     return (

@@ -33,7 +33,7 @@ export default function Navigator() {
   return (
     <NavigationContainer ref={navigationRef}>
     <Stack.Navigator
-        initialRouteName='PedidoCreate'
+        initialRouteName='Perfil'
         screenOptions={{
           headerShown: false,
           animationEnabled: true,
