@@ -6,20 +6,23 @@ export default StyleSheet.create({
     padding: 20,
   },
   searchbar_container: {
-    width: "70%",
+    width: "75%",
     height: 60,
-    marginBottom: 10
+    marginBottom: 10,
+  },
+  header:{
+    height: '10%',
+    minHeight: 150,
+    justifyContent: 'center',
+    padding: 20,
+    borderBottomLeftRadius: 40,
+    borderBottomRightRadius: 40,
+    backgroundColor: '#9949CA',
   },
   search_container:{
     justifyContent: 'space-between',
-    alignItems: "center",
+    // alignItems: 'center',
     flexDirection: 'row',
-    padding: 20,
-    minHeight: 150,
-    height: '10%',
-    backgroundColor: 'red',
-    borderBottomLeftRadius: 40,
-    borderBottomRightRadius: 40,
   },
   search_result: {
     width: "100%",
@@ -35,7 +38,7 @@ export default StyleSheet.create({
   button_search:{
     backgroundColor: '#fff',
     width: '20%',
-    height: 65,
+    height: 60,
     borderRadius: 12,
   }
 });

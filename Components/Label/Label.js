@@ -1,13 +1,12 @@
 import { StyleSheet, Text, View } from "react-native";
 
-export default function Label({children}){
+export default function Label({children, color = '#9949CA', size = 30}){
     return(
-        <Text style={styles.text}>{children}</Text>
+        <Text style={[styles.text, {color, fontSize: size}]}>{children}</Text>
     )
 }
 const styles = StyleSheet.create({
     text:{
-        color: '#9949CA',
         fontWeight: 'bold',
         fontSize: 30,
         marginVertical: 10,
