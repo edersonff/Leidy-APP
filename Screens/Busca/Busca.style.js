@@ -5,12 +5,21 @@ export default StyleSheet.create({
     width: "100%",
     padding: 20,
   },
-  container_search: {
-    width: "100%",
-    minHeight: 60,
-    justifyContent: "center",
-    alignItems: "center",
+  searchbar_container: {
+    width: "70%",
+    height: 60,
     marginBottom: 10
+  },
+  search_container:{
+    justifyContent: 'space-between',
+    alignItems: "center",
+    flexDirection: 'row',
+    padding: 20,
+    minHeight: 150,
+    height: '10%',
+    backgroundColor: 'red',
+    borderBottomLeftRadius: 40,
+    borderBottomRightRadius: 40,
   },
   search_result: {
     width: "100%",
@@ -19,7 +28,14 @@ export default StyleSheet.create({
   search_input: {
     flex: 1,
     width: '100%',
-    paddingHorizontal: 30,
-    fontSize: 30
+    paddingHorizontal: 10,
+    fontSize: 30,
+    borderRadius: 12,
+  },
+  button_search:{
+    backgroundColor: '#fff',
+    width: '20%',
+    height: 65,
+    borderRadius: 12,
   }
 });

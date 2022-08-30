@@ -1,17 +1,16 @@
-import { StyleSheet } from "react-native";
+import { Platform, StatusBar, StyleSheet } from "react-native";
 import { colors } from '../../styles/base';
 export default StyleSheet.create({
     container:{
         flex: 1,
-        backgroundColor: colors.primary,
-        alignItems: 'center',
-        justifyContent: 'center',   
+        alignItems: 'center',   
         position: 'relative',
-        overflow: 'hidden'
+        overflow: 'hidden',
+        backgroundColor: '#fff'
     },
     btns_container: {
         height: '40%',
-        minWidth: '80%',
+        width: '80%',
         justifyContent: 'space-evenly'
     },
     form_control:{
@@ -20,27 +19,30 @@ export default StyleSheet.create({
         justifyContent: 'space-between',
     },
     logo_container:{
-        position: "absolute",
         top: 0,
         width: '100%',
-        height: '30%',
+        height: '22%',
+        backgroundColor: 'red',
         justifyContent: 'center',
         alignItems: 'center',
+        marginTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
         zIndex: 2
     },
     logo_text:{
-        color: colors.bg,
-        fontSize: 30
-    },
-    title_verify_pass:{
-        fontWeight: 'normal',
-        marginBottom: 30,
-        marginTop: 30
+        color: '#9949CA',
+        fontWeight: 'bold',
+        fontSize: 30,
+        marginVertical: 10,
     },
     input:{
-        marginBottom: 20,
-        borderBottomColor: '#fff',
+        marginBottom: 10,
+        backgroundColor: '#fff',
+        fontSize: 18,
         width: '100%',
-        height: 70,
+        height: 60,
+    },
+    login_image:{
+        width: '100%',
+        height: '100%'
     }
 })

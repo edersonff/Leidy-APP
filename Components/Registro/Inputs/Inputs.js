@@ -16,6 +16,8 @@ export default function Inputs(){
           style={styles.input}
           mode="outlined"
           label="Digite seu nome"
+          placeholderTextColor="#bbb"
+          theme={{colors: {placeholder: '#bbb'}}}
           onChangeText={(e)=>{
             name = e;
           }}
@@ -25,6 +27,8 @@ export default function Inputs(){
           autoComplete="email"
           mode="outlined"
           label="Digite seu email"
+          placeholderTextColor="#bbb"
+          theme={{colors: {placeholder: '#bbb'}}}
           onChangeText={(e)=>{
             email = e;
           }}
@@ -34,6 +38,8 @@ export default function Inputs(){
             mode="outlined"
             label="Digite sua senha"
             secureTextEntry={isPasswordSecure}
+            placeholderTextColor="#bbb"
+            theme={{colors: {placeholder: '#bbb'}}}
             right={
                 <TextInput.Icon
                 style={{marginRight: 30}}
@@ -47,10 +53,11 @@ export default function Inputs(){
             }}
         />
         <Btn
-            onPress={() => { submitRegister(name, password, email) }}
-            text="Fazer cadastro"
-            color="#9949CA"
-            fill={true}
+          weight={'bold'}
+          onPress={() => { submitRegister(name, password, email) }}
+          text="Fazer cadastro"
+          color="#9949CA"
+          fill={true}
         />
         <View>
             <Text style={styles.title_verify_pass}>Segurança da senha</Text>
@@ -112,8 +119,11 @@ const styles = StyleSheet.create({
         width: '100%',
     },
     input:{
-        marginBottom: 15,
-        backgroundColor: 'white',
+      marginBottom: 10,
+      backgroundColor: '#fff',
+      fontSize: 18,
+      width: '100%',
+      height: 60,
     },
     verify_pass:{
         width: 65,

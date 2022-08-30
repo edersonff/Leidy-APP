@@ -4,8 +4,8 @@ import { packages } from "../../styles/base";
 import styles from "./Registro.style";
 import Title from "../../Components/Title";
 import Inputs from "../../Components/Registro/Inputs/Inputs";
+import Label from "../../Components/Label/Label";
 
-const width = [];
 export default function AuthPage() {
   return (
     <View style={styles.container}>
@@ -18,7 +18,7 @@ export default function AuthPage() {
       <View style={styles.form_container}>
         <View style={styles.form}>
           <View style={styles.label_container}>
-            <Title center mBottom={15}>Registrar</Title>
+            <Label>Registro</Label>
           </View>
           <Inputs />
         </View>

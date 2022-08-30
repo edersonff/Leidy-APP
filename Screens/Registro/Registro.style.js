@@ -36,43 +36,8 @@ export default StyleSheet.create({
     form_control:{
         width: '100%',
     },
-    form_title:{
-        fontSize: 30,
-        textAlign: "center",
-        fontWeight: 'normal',
-        textTransform: 'uppercase'
-    },
     logo_text:{
         color: colors.bg,
         fontSize: 30
     },
-    verify_pass:{
-        width: 65,
-        height: 5,
-        marginRight: 10
-    },
-    pass_fill:{
-        backgroundColor: '#32cd32',
-        position: 'absolute',
-        width: '100%'
-    },
-    pass_empty:{
-        position: 'relative',
-        backgroundColor: 'gray',
-        overflow: 'hidden',
-        borderRadius: 3,
-    },
-    container_verify_pass:{
-        flexDirection: 'row',
-    },
-    title_verify_pass:{
-        fontWeight: 'normal',
-        marginVertical: 15,
-    },
-    label_container:{
-        width: '100%',
-    },
-    input:{
-        marginBottom: 15
-    }
 })
