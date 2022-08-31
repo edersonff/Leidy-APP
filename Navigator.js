@@ -33,7 +33,7 @@ export default function Navigator() {
   return (
     <NavigationContainer ref={navigationRef}>
     <Stack.Navigator
-        initialRouteName='Busca'
+        initialRouteName='Login'
         screenOptions={{
           headerShown: false,
           animationEnabled: true,

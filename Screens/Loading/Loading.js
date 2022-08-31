@@ -26,7 +26,7 @@ export default function Loading() {
             d(()=>{ 
                 changeAnim(1, opac);
                 
-                d(()=>{ navigate('Login'); }, 500);                
+                d(()=>{ navigate('Login'); }, 1000);                
             }, 100);
             
         }, 820)

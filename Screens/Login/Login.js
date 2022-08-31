@@ -10,6 +10,7 @@ import Link from "../../Components/Link/Link";
 import TextBox from "../../Components/TextBox";
 import { navigate } from '../../Components/Util/navigation';
 import Label from "../../Components/Label/Label";
+import ImageLoad from "../../Components/ImageLoad/ImageLoad";
 export default function AuthPage(props) {
   const context = Context(store);
   const email = useRef(null);
@@ -33,7 +34,7 @@ export default function AuthPage(props) {
   return (
     <View style={styles.container}>
       <View style={styles.logo_container}>
-        <Image style={styles.login_image} source={image} />
+        <ImageLoad style={styles.login_image} source={image} />
       </View>
       <View style={styles.btns_container}>
         <View style={styles.form_control}>
