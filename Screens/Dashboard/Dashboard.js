@@ -7,12 +7,11 @@ import PerfilOption from '../../Components/PerfilOption';
 import Menu from '../../img/Menu01.png';
 import Perfil from '../../img/teste.png';
 import Filter from '../../Components/Filter';
-import { ScrollView, Image, FlatList, View } from 'react-native';
+import { ScrollView, FlatList, View } from 'react-native';
 import Promotion from '../../img/Promotion-example.png'
 import Layout from '../Layout/Layout';
 import ModalGeneral from '../../Components/Modal';
 import MenuSelect from '../../Components/Dashboard/MenuSelect/MenuSelect';
-import ScrollModal from '../../Components/ScrollModal/ScrollModal';
 function DashboardFirst() {
     const data = [
         {

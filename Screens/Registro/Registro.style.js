@@ -11,7 +11,7 @@ export default StyleSheet.create({
     },
     form_container:{
         overflow: 'hidden',
-        flex: 4,
+        flex: 5,
         backgroundColor: colors.bg,
         bottom: 0,
         width: '100%',
@@ -31,7 +31,9 @@ export default StyleSheet.create({
     form:{
         width: '80%',
         height: '100%',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        // justifyContent: 'space-evenly',
+        // paddingVertical: 20,
     },
     form_control:{
         width: '100%',

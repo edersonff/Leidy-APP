@@ -1,11 +1,10 @@
 import { StyleSheet, TouchableOpacity, View } from 'react-native'
 import styled from 'styled-components/native'
 import { navigate } from '../Components/Util/navigation';
-import { TouchableRipple } from 'react-native-paper';
 
 export default function PerfilOption({id, text, rate, src, first, last}){
     return(
-        <TouchableRipple 
+        <TouchableOpacity activeOpacity={0.6} 
             style={[{marginLeft: first ? 0 : null , marginRight: last ? 0 : null}, styles.container]}
             onPress={()=>{
                 navigate('Pedido', {id});
@@ -19,11 +18,11 @@ export default function PerfilOption({id, text, rate, src, first, last}){
                 <View style={styles.container_desc}>
                     <Rate style={{color: `rgb(255,${ rate*170/5 },0)`}}>{rate.toFixed(1)}</Rate>
                     <Description>
-                    Preciso de alguém para ... 
+                        Preciso de alguém para ... 
                     </Description>
                 </View>
             </MenuImage>
-        </TouchableRipple>
+        </TouchableOpacity>
     )
 }
 const styles = StyleSheet.create({

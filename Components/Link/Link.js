@@ -1,11 +1,11 @@
-import { Pressable, StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { navigate } from '../../Components/Util/navigation';
 
 export default function Link({children, style, route, align = 'left'}){
     return(
-        <Pressable onPress={()=>{navigate(route)}} style={[styles.link_container, style]}>
+        <TouchableOpacity activeOpacity={0.5} onPress={()=>{navigate(route)}} style={[styles.link_container, style]}>
             <Text style={[styles.text, {textAlign: align}]}>{children}</Text>
-        </Pressable>
+        </TouchableOpacity>
     )
 }
 const styles = StyleSheet.create({
@@ -13,6 +13,4 @@ const styles = StyleSheet.create({
         color: '#5555df',
         fontSize: 18,
     },
-    link_container:{
-    }
 });

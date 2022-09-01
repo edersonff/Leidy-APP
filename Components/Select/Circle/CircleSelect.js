@@ -1,7 +1,7 @@
 import { StyleSheet, View } from "react-native";
 import { TouchableRipple } from 'react-native-paper';
 
-export default function CircleSelect({onPress, children, color = '#333333', padding = 7, style, styleContent}){
+export default function CircleSelect({onPress, children, color = '#33333', padding = 7, style, styleContent}){
     return(
         <View style={[styles.touchable_container, style]}>
           <TouchableRipple rippleColor={color} onPress={onPress} style={[{padding}, styleContent]}>

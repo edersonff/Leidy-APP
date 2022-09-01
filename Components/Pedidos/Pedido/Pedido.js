@@ -1,13 +1,14 @@
-import { Image, Pressable, View } from "react-native";
+import { Image, Pressable, TouchableOpacity, View } from "react-native";
 import Title from '../../Title';
 import TextBox from '../../TextBox';
 import { StyleSheet } from "react-native";
 import image from '../../../img/Rosquinha.jpg';
 import Ionicons from '@expo/vector-icons/Ionicons';
+import { navigate } from "../../Util/navigation";
 
 export default function Pedido({order}){
     return(
-        <Pressable onPress={()=>{}} style={styles.container_pedido}>
+        <TouchableOpacity onPress={()=>{ navigate('Pedido', {id: order.id}) }} style={styles.container_pedido}>
             <View style={styles.pedido_foto_container}>
                 <Image style={styles.pedido_foto} source={image}/>
             </View>
@@ -15,7 +16,7 @@ export default function Pedido({order}){
                 <Title size={20} color={'#9955CA'} style={styles.title} weight={'bold'}>{order.title}</Title>
                 <TextBox size={17} color={'#7755CA'} style={styles.textbox}>{order.rate ? (<>{order.rate} <Ionicons size={20} name="star" style={styles.star} /> - </>) : null}{order.description}</TextBox>
             </View>
-        </Pressable>
+        </TouchableOpacity>
     )
 }
 

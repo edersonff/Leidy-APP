@@ -13,12 +13,12 @@ import TextBox from '../../Components/TextBox';
 export default function Busca() {
     let context = Context(store);
     const [searchs, setSearchs] = useState([
-        {title: 'Pedido n°1', description: 'Descrição muito legal parte 1', rate: 4.5},
-        {title: 'Pedido n°2', description: 'Descrição muito legal parte 2', rate: 4.5},
-        {title: 'Pedido n°3', description: 'Descrição muito legal parte 3', rate: 4.5},
-        {title: 'Pedido n°4', description: 'Descrição muito legal', rate: 4.5},
-        {title: 'Pedido n°5', description: 'Descrição muito legal', rate: 4.5},
-        {title: 'Pedido n°6', description: 'Descrição muito legal', rate: 5.0},
+        {title: 'Pedido n°1', description: 'Descrição muito legal parte 1', rate: 4.5, id: 1},
+        {title: 'Pedido n°2', description: 'Descrição muito legal parte 2', rate: 4.5, id: 2},
+        {title: 'Pedido n°3', description: 'Descrição muito legal parte 3', rate: 4.5, id: 3},
+        {title: 'Pedido n°4', description: 'Descrição muito legal', rate: 4.5, id: 4},
+        {title: 'Pedido n°5', description: 'Descrição muito legal', rate: 4.5, id: 5},
+        {title: 'Pedido n°6', description: 'Descrição muito legal', rate: 5.0, id: 6},
     ]);
     async function searchOrder(query = ''){
         return context.apiAuth().get('auth/order/search', {params: {query}})

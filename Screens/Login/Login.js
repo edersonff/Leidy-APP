@@ -11,24 +11,24 @@ import TextBox from "../../Components/TextBox";
 import { navigate } from '../../Components/Util/navigation';
 import Label from "../../Components/Label/Label";
 import ImageLoad from "../../Components/ImageLoad/ImageLoad";
+let email, password;
 export default function AuthPage(props) {
   const context = Context(store);
-  const email = useRef(null);
-  const password = useRef(null);
 
   async function submitLogin() {
     await api
-      .post("user/login", {
-        email: email.current.value,
-        password: password.current.value
+      .post("auth/signin", {
+        email,
+        password
       })
       .then(async (res) => {
+        alert(res);
         context.set('SET_TOKEN',res.data.token);
       })
       .catch(function (error) {
-        console.log(error);
+        alert(error);
       });
-      props.navigation.navigate('Perfil');
+      // props.navigation.navigate('Perfil');
   }
 
   return (
@@ -49,6 +49,7 @@ export default function AuthPage(props) {
               placeholder="Digite seu email"
               name={"Email"}
               underlineColorAndroid="#fff"
+              onChangeText={(e) => { email = e }}
             />
             <TextInput
               mode="outlined"
@@ -58,6 +59,7 @@ export default function AuthPage(props) {
               theme={{colors: {placeholder: '#bbb'}}}
               placeholder="Digite sua senha"
               name={"Senha"}
+              onChangeText={(e) => { password = e }}
             />
             <Link align="right" route={'Loading'} style={{marginBottom: 15, paddingHorizontal: 10}}>Esqueci minha senha</Link>
             <Btn

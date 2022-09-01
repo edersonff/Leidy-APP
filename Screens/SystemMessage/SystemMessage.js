@@ -8,7 +8,7 @@ export default function Loading(props) {
     return (
         <View style={styles.container}>
             <View style={styles.goback_container}>
-                <TouchableOpacity onPress={()=>{ props.navigation.goBack() }} style={styles.goback}>
+                <TouchableOpacity activeOpacity={0.6} onPress={()=>{ props.navigation.goBack() }} style={styles.goback}>
                     <Ionicons name="caret-back-outline" size={23} />
                 </TouchableOpacity>
             </View>

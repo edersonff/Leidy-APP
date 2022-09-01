@@ -2,11 +2,14 @@ import React, { useEffect } from 'react';
 import { View, StyleSheet, ScrollView, Platform, StatusBar } from 'react-native';
 import Navbar from '../../Components/Navbar';
 
-export default function Layout({ top, children, padding = 20, backgroundColorScoll = '', margin = 0, onScroll, bottom, barColor = '#fff'}) {
+export default function Layout({ top, children, padding = 20, backgroundColorScoll = '', margin = 0, onScroll, bottom, barColor = '#fff', center}) {
     return (
         <View style={styles.layout}>
             <View style={[styles.scrollBar, {backgroundColor: barColor}]} />
             {top}
+            <View style={styles.center}>
+                {center}
+            </View>
             <ScrollView 
               scroll      
               EventThrottle={16}
@@ -42,5 +45,10 @@ const styles = StyleSheet.create({
     container_layout:{
         width: '100%',
         flex: 1
+    },
+    center:{
+        width: '100%',
+        height: '100%',
+        position: 'absolute',
     }
 })

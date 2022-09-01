@@ -21,7 +21,7 @@ export default function BackButton({go, navagation}){
     })
     
     return(
-        <TouchableOpacity onPress={()=>{ navagation.goBack() }} style={styles.back_container}>
+        <TouchableOpacity activeOpacity={0.6} onPress={()=>{ navagation.goBack() }} style={styles.back_container}>
             <Ionicons style={styles.back_btn} name='arrow-back' size={20}/>
         </TouchableOpacity>
     )
