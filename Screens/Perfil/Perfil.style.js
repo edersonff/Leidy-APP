@@ -10,22 +10,51 @@ export default StyleSheet.create({
   main_status:{
     paddingBottom: 10,
     width: '100%',
-    flexDirection: 'row',
     justifyContent: 'space-between'
   },
-  type_perfil:{
-    flexDirection: 'row',
+  price_container:{
     alignItems: 'center'
+
   },
-  type_perfil_text:{
+  price:{
     color: '#000',
-    fontSize: 20,
-    fontWeight: '100'
+    fontSize: 18,
+    fontWeight: '600'
+  },
+  bonus:{
+    color: '#219A60',
+    fontSize: 15,
+    marginHorizontal: 10,
   },
   maps:{
     width: '100%',
     height: 200,
     resizeMode: "cover",
+  },
+  icons:{
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    padding: 10,
+    width: '100%',
+    position: 'absolute',
+    top: 0,
+    right: 0,
+  },
+  important_values:{
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    width: '100%',
+    backgroundColor: '#f5f5f5',
+    padding: 20,
+  },
+  content:{ 
+    borderTopRightRadius: 40,
+    borderTopLeftRadius: 40, 
+    position: 'relative',
+    bottom: 35,
+    backgroundColor: '#fff'
   },
   seeMore_container:{
     justifyContent: 'center',

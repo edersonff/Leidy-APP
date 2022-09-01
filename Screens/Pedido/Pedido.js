@@ -6,8 +6,6 @@ import PerfilImage from '../../img/teste.png';
 import MapsImage from '../../img/Maps.png';
 import ContainerG from '../../Components/ContainerG';
 import { Dimensions, Image, View } from "react-native";
-import { Text } from 'react-native-paper';
-import LineBreak from '../../Components/LineBreak/LineBreak';
 import TextBoxTitle from '../../Components/TextBoxTitle/TextBoxTitle';
 import Heart from '../../Components/Heart/Heart';
 import BottomButton from '../../Components/BottomButton/BottomButton';

@@ -8,7 +8,7 @@ import { navigate } from "../../Util/navigation";
 
 export default function Pedido({order}){
     return(
-        <TouchableOpacity onPress={()=>{ navigate('Pedido', {id: order.id}) }} style={styles.container_pedido}>
+        <TouchableOpacity activeOpacity={0.6} onPress={()=>{ navigate('Pedido', {id: order.id}) }} style={styles.container_pedido}>
             <View style={styles.pedido_foto_container}>
                 <Image style={styles.pedido_foto} source={image}/>
             </View>

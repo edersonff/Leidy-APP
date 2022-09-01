@@ -40,7 +40,7 @@ export default function Busca() {
             <View style={styles.container_searchs}>
                 <Label size={27}>Resultados</Label>
                 <View style={styles.search_result}>
-                    <FlatList data={searchs} renderItem={(data, i)=>{
+                    <FlatList data={searchs} scrollEnabled={false} renderItem={(data, i)=>{
                         return( <Pedido key={i} order={data.item} /> )}} />
                 </View>
             </View>
