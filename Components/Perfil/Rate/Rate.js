@@ -28,7 +28,8 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: '#D4D4D4',
         paddingVertical: 10,
-        marginVertical: 5
+        marginVertical: 5,
+        borderRadius: 10,
     },
     rate_number_container:{
         width: 100,

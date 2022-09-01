@@ -39,6 +39,7 @@ export default StyleSheet.create({
     height: '80%',
     backgroundColor: '#fff',
     padding: 20,
+    borderRadius: 20,
   },
   rate_list_container:{
     justifyContent:'center',
@@ -47,10 +48,10 @@ export default StyleSheet.create({
   rate_item_type:{
     width: 100,
     height: '100%',
-    backgroundColor: 'red',
     justifyContent: 'center',
     alignItems: 'center',
-    marginRight : 20
+    marginRight : 20,
+    backgroundColor: '#ddd'
   },
   rate_item_type_text:{
     fontSize: 20,

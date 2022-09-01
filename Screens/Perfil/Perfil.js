@@ -1,6 +1,5 @@
 import React from 'react';
 import Title from '../../Components/Title';
-import Context from "../../Context";
 import styles from './Perfil.style'
 import Layout from '../Layout/Layout'
 import PerfilImage from '../../img/Perfil01.png';
@@ -15,12 +14,12 @@ import Rate from '../../Components/Perfil/Rate/Rate';
 import { useState } from 'react';
 import HorizontalScroll from '../../Components/HorizontalScroll';
 const win = Dimensions.get('window');
-export default function Perfil({ route, navigation }) {
+export default function Perfil() {
     const [ rateModal, setRateModal ] = useState(true);
     const showModal = () => setRateModal(true);
     const close = () => {setRateModal(false)}
     return (
-        <Layout padding={0} backgroundColorScoll='#ffffff' >    
+        <Layout padding={0} backgroundColorScoll='#ffffff' t >    
         {/* <BackButton go='Pedidos' navagation={navigation}/> */}
             <View style={styles.title_container}>
                 <Image
@@ -35,7 +34,7 @@ export default function Perfil({ route, navigation }) {
                 />
                 <View>
                     <ContainerG style={{marginLeft: 16}}>
-                        <Title color='#000' >Nome do usuario</Title>
+                        <Title color='#000'>Nome do usuario</Title>
                     </ContainerG>
                 </View>
             </View>
@@ -45,7 +44,6 @@ export default function Perfil({ route, navigation }) {
                         <View style={styles.type_perfil}>
                             <Text style={styles.type_perfil_text}>Limpeza / lavação</Text>
                         </View>
-                        <Heart />
                     </View>               
                     <LineBreak width={100} />
                     <ContainerG>
