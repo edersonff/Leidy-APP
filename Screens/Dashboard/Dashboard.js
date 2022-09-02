@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { Text } from 'react-native-paper';
+import React, { useEffect, useRef, useState } from 'react';
+import { Button, Text } from 'react-native-paper';
 import styles from './Dashboard.style'
 import HorizontalScroll from '../../Components/HorizontalScroll';
 import MenuImageOption from '../../Components/MenuImageOption';
@@ -7,11 +7,12 @@ import PerfilOption from '../../Components/PerfilOption';
 import Menu from '../../img/Menu01.png';
 import Perfil from '../../img/teste.png';
 import Filter from '../../Components/Filter';
-import { ScrollView, FlatList, View } from 'react-native';
+import { ScrollView, FlatList, View, Dimensions } from 'react-native';
 import Promotion from '../../img/Promotion-example.png'
 import Layout from '../Layout/Layout';
 import ModalGeneral from '../../Components/Modal';
 import MenuSelect from '../../Components/Dashboard/MenuSelect/MenuSelect';
+import BottomButton from '../../Components/BottomButton/BottomButton';
 function DashboardFirst() {
     const data = [
         {
@@ -116,11 +117,18 @@ export default function Dashnboard(){
         { title: 'Lavação', src: 0 },
         { title: 'Lavação', src: 0 },
     ]
+    const scrollViewRef = useRef(null);
+    const changeScroll = (index)=>{
+        scrollViewRef.current.scrollTo({x: index * Dimensions.get('screen').width, y:0, animated: true});
+    }
     return(
         <Layout backgroundColorScoll='#fff' padding={0} margin={20} >
             {/* <ScrollModal /> */}
             <ModalGeneral carousels={['', '', '', '']} image={Promotion} />
             <View>
+                <BottomButton onPress={()=>{changeScroll(1)}}>AAAAAAAA</BottomButton>
+                <BottomButton onPress={()=>{changeScroll(2)}}>AAAAAAAA</BottomButton>
+                <BottomButton onPress={()=>{changeScroll(3)}}>AAAAAAAA</BottomButton>
                 <Text style={styles.address}>R. address, number</Text>
                 <MenuSelect/>
                 <HorizontalScroll list={filters} renderItem={(data)=>{
@@ -139,13 +147,16 @@ export default function Dashnboard(){
                 }}/>
                 <ScrollView
                     horizontal={true}
-                    contentContainerStyle={styles.horizontalScrollContainer}
+                    contentContainerStyle={{width: 200}}
+                    style={{width: 200}}
                     // showsHorizontalScrollIndicator={false}
-                    scrollEnabled={false}
-                    scrollEventThrottle={200}
-                    decelerationRate="fast"
-                    pagingEnabled
+                    ref={scrollViewRef}
+                    // scrollEventThrottle={200}
+                    // decelerationRate="fast"
+                    // pagingEnabled
                 >
+                    <DashboardFirst/>
+                    <DashboardFirst/>
                     <DashboardFirst/>
                 </ScrollView>
             </View>
