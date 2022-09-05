@@ -54,7 +54,7 @@ export default function Inputs(){
         />
         <Btn
           weight={'bold'}
-          onPress={() => { submitRegister(name, password, email) }}
+          onPress={() => { submitRegister(); }}
           text="Fazer cadastro"
           color="#9949CA"
           fill={true}
@@ -101,14 +101,17 @@ function PassReturn({pass}) {
     );
 }
 
-async function submitRegister(name, password, email) {
+async function submitRegister() {
+    console.log(name,password,email);
     await api
-      .post("user/register/client", {
+      .post("user/register", {
         name,password,email
       })
       .then((res) => {
         console.log(res.data.token)
         context.set("SET_TOKEN",res.data.token);
+      }).catch((err) => {
+        console.log(err.response.data)
       })
       
     context.apiAuth().delete("auth/user/");

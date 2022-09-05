@@ -5,14 +5,18 @@ import styles from "./Registro.style";
 import Title from "../../Components/Title";
 import Inputs from "../../Components/Registro/Inputs/Inputs";
 import Label from "../../Components/Label/Label";
-
+import useError from "../../Context/error/UseError";
+import { Button } from 'react-native-paper';
 export default function AuthPage() {
+  const [elemError, setError] = useError();
   return (
     <View style={styles.container}>
-      <View style={styles.logo_container}
+      {elemError}
+      <View style={styles.logo_container}>
+      <Button
         onPress={() => {
-          if (bottomAnimRegister) setbottomAnimRegister(false);
-        }}>
+          setError("Erro de teste");
+        }}>aaaaaaaa</Button>
         <Text style={styles.logo_text}>{packages.name}</Text>
       </View>
       <View style={styles.form_container}>

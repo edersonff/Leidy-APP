@@ -126,9 +126,6 @@ export default function Dashnboard(){
             {/* <ScrollModal /> */}
             <ModalGeneral carousels={['', '', '', '']} image={Promotion} />
             <View>
-                <BottomButton onPress={()=>{changeScroll(1)}}>AAAAAAAA</BottomButton>
-                <BottomButton onPress={()=>{changeScroll(2)}}>AAAAAAAA</BottomButton>
-                <BottomButton onPress={()=>{changeScroll(3)}}>AAAAAAAA</BottomButton>
                 <Text style={styles.address}>R. address, number</Text>
                 <MenuSelect/>
                 <HorizontalScroll list={filters} renderItem={(data)=>{

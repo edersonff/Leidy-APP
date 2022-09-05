@@ -1,6 +1,6 @@
 {
   "name": "App Name",
-  "api": "http://localhost:3333/",
+  "api": "http://191.235.61.158:3333/",
   "version": "1.0.0",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {

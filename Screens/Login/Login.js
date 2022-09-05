@@ -17,7 +17,7 @@ export default function AuthPage(props) {
 
   async function submitLogin() {
     await api
-      .post("auth/signin", {
+      .post("user/login", {
         email,
         password
       })
