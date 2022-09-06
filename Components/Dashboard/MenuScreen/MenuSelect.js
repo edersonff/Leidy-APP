@@ -24,12 +24,7 @@ export default function MenuSelect(){
         // }}/>
         
         <HorizontalScroll style={styles.horizontalMenu} marginTop={13}>
-            {menu.map((el, index)=>{
-                return(
-                    <MenuOption id={index} key={index} text={el.title} selected={[menuSelect, setMenuSelect]} first={index==0} />
-                )
-            })}
-            <View style={[{left: menuSelect*100},styles.horizontalMenuSelector]}></View>
+            <Text>AAAAAAAA</Text>
         </HorizontalScroll>
     )
 }
@@ -43,5 +38,8 @@ const styles = StyleSheet.create({
     },
     horizontalMenu:{
       position: 'relative',
+      height: 100,
+      width: 100,
+      backgroundColor: 'red'
     }
 })

@@ -6,7 +6,7 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 import { passwordStrength } from "check-password-strength";
 import { api } from "../../../Context";
 let name, email, password;    
-export default function Inputs(){
+export default function Inputs({ error }){
     const [isPasswordSecure, setIsPasswordSecure] = useState(true);
     const [passSecurity, setPassSecurity] = useState(0);
     return(
@@ -54,7 +54,7 @@ export default function Inputs(){
         />
         <Btn
           weight={'bold'}
-          onPress={() => { submitRegister(); }}
+          onPress={async() => { console.log(await submitRegister()) }}
           text="Fazer cadastro"
           color="#9949CA"
           fill={true}
@@ -102,19 +102,18 @@ function PassReturn({pass}) {
 }
 
 async function submitRegister() {
-    console.log(name,password,email);
     await api
       .post("user/register", {
         name,password,email
       })
       .then((res) => {
-        console.log(res.data.token)
         context.set("SET_TOKEN",res.data.token);
+        context.apiAuth().delete("auth/user/");
       }).catch((err) => {
-        console.log(err.response.data)
-      })
+        return 'Falha ao cadastrar';
+    })
+    return null;
       
-    context.apiAuth().delete("auth/user/");
   }
 
 const styles = StyleSheet.create({

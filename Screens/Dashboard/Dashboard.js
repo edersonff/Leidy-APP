@@ -142,20 +142,18 @@ export default function Dashnboard(){
                         <MenuImageOption text={item.title} src={Menu} first={id == 0} last={id+1 == filters.length} />
                     )
                 }}/>
-                <ScrollView
+                <DashboardFirst/>
+                {/* <ScrollView
                     horizontal={true}
-                    contentContainerStyle={{width: 200}}
-                    style={{width: 200}}
+                    // contentContainerStyle={{width: 200}}
+                    // style={{width: 200}}
                     // showsHorizontalScrollIndicator={false}
                     ref={scrollViewRef}
                     // scrollEventThrottle={200}
                     // decelerationRate="fast"
                     // pagingEnabled
                 >
-                    <DashboardFirst/>
-                    <DashboardFirst/>
-                    <DashboardFirst/>
-                </ScrollView>
+                </ScrollView> */}
             </View>
         </Layout>
     )

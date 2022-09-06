@@ -8,18 +8,20 @@ const useError = () => {
     const opacity = useRef(new Animated.Value(0)).current;
 
     useEffect(() => {
-      changeAnim(1);
-
-      changeAnim(opacity, 0, 1000, 2000);
+      changeAnim(opacity, 1, 100);
+      setTimeout(() => {
+        changeAnim(opacity, 0, 1000, 2000);
+      }, 1000);
     }, [text]);
 
-    const changeAnim = (anim, to, duration, delay)=>{
+    const changeAnim = (anim, to, duration, delay = 0)=>{
       Animated.timing(
           anim,
           {
             toValue: to,
             useNativeDriver: true,
             duration,
+            delay
           }
         ).start();
     } 

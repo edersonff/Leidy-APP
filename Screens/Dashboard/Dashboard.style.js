@@ -17,7 +17,7 @@ export default StyleSheet.create({
     },
     address:{
         fontSize: 15,
-        color: 'gray',
+        color: '#9949CA',
         fontWeight: 'normal',
     },
     modal:{

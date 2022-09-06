@@ -7,16 +7,13 @@ import Inputs from "../../Components/Registro/Inputs/Inputs";
 import Label from "../../Components/Label/Label";
 import useError from "../../Context/error/UseError";
 import { Button } from 'react-native-paper';
+let i = 0;
 export default function AuthPage() {
   const [elemError, setError] = useError();
   return (
     <View style={styles.container}>
       {elemError}
       <View style={styles.logo_container}>
-      <Button
-        onPress={() => {
-          setError("Erro de teste");
-        }}>aaaaaaaa</Button>
         <Text style={styles.logo_text}>{packages.name}</Text>
       </View>
       <View style={styles.form_container}>
@@ -24,7 +21,7 @@ export default function AuthPage() {
           <View style={styles.label_container}>
             <Label>Registro</Label>
           </View>
-          <Inputs />
+          <Inputs error={setError} />
         </View>
       </View>
     </View>

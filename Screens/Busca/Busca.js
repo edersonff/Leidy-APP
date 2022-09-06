@@ -2,14 +2,12 @@ import React from 'react';
 import { View, Image, Text, Pressable, FlatList } from 'react-native';
 import styles from './Busca.style'
 import Context from "../../Context";
-import { useEffect } from 'react';
 import { useState } from 'react';
 import Pedido from '../../Components/Pedidos/Pedido/Pedido';
 import { Searchbar } from 'react-native-paper';
 import Layout from '../Layout/Layout';
 import { store } from '../../Context/context';
 import Label from '../../Components/Label/Label';
-import TextBox from '../../Components/TextBox';
 export default function Busca() {
     let context = Context(store);
     const [searchs, setSearchs] = useState([

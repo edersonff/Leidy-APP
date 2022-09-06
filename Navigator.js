@@ -33,7 +33,7 @@ export default function Navigator() {
   return (
     <NavigationContainer ref={navigationRef}>
     <Stack.Navigator
-        initialRouteName='Registro'
+        initialRouteName='Dashboard'
         screenOptions={{
           headerShown: false,
           animationEnabled: true,
